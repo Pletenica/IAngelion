@@ -11,6 +11,8 @@ namespace Complete
         public AudioClip m_EngineIdling;            // Audio to play when the tank isn't moving.
         public AudioClip m_EngineDriving;           // Audio to play when the tank is moving.
 		public float m_PitchRange = 0.2f;           // The amount by which the pitch of the engine noises can vary.
+        public Animator EvaAnimator;
+
 
         private string m_MovementAxisName;          // The name of the input axis for moving forward and back.
         private string m_TurnAxisName;              // The name of the input axis for turning.
@@ -19,6 +21,9 @@ namespace Complete
         private float m_TurnInputValue;             // The current value of the turn input.
         private float m_OriginalPitch;              // The pitch of the audio source at the start of the scene.
         private ParticleSystem[] m_particleSystems; // References to all the particles systems used by the Tanks
+
+
+
 
         private void Awake ()
         {
@@ -120,6 +125,19 @@ namespace Complete
         {
             // Create a vector in the direction the tank is facing with a magnitude based on the input, speed and the time between frames.
             Vector3 movement = transform.forward * m_MovementInputValue * m_Speed * Time.deltaTime;
+
+            if (EvaAnimator != null)
+            {
+                if (movement.magnitude != 0)
+                {
+                    Debug.Log("Hola que tal, estas corrent.");
+                    EvaAnimator.SetBool("isRunning", true);
+                }
+                else
+                {
+                    EvaAnimator.SetBool("isRunning", false);
+                }
+            }
 
             // Apply this movement to the rigidbody's position.
             m_Rigidbody.MovePosition(m_Rigidbody.position + movement);

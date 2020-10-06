@@ -15,7 +15,7 @@ namespace Complete
         public float m_MinLaunchForce = 15f;        // The force given to the shell if the fire button is not held.
         public float m_MaxLaunchForce = 30f;        // The force given to the shell if the fire button is held for the max charge time.
         public float m_MaxChargeTime = 0.75f;       // How long the shell can charge for before it is fired at max force.
-
+        public Animator EVAAnimator;
 
         private string m_FireButton;                // The input axis that is used for launching shells.
         private float m_CurrentLaunchForce;         // The force that will be given to the shell when the fire button is released.
@@ -43,6 +43,7 @@ namespace Complete
 
         private void Update ()
         {
+            if (EVAAnimator != null) EVAAnimator.SetBool("isAttacking", false);
             // The slider should have a default value of the minimum launch force.
             m_AimSlider.value = m_MinLaunchForce;
 
@@ -85,7 +86,7 @@ namespace Complete
         {
             // Set the fired flag so only Fire is only called once.
             m_Fired = true;
-
+            if(EVAAnimator!=null) EVAAnimator.SetBool("isAttacking", true);
             // Create an instance of the shell and store a reference to it's rigidbody.
             Rigidbody shellInstance =
                 Instantiate (m_Shell, m_FireTransform.position, m_FireTransform.rotation) as Rigidbody;
