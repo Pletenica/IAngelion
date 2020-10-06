@@ -5550,7 +5550,7 @@ MonoBehaviour:
   m_StartingHealth: 100
   m_Slider: {fileID: 6500638202285288888}
   m_FillImage: {fileID: 6500638202285350692}
-  m_FullHealthColor: {r: 0.96428955, g: 0.6839622, b: 1, a: 1}
+  m_FullHealthColor: {r: 0.493948, g: 0.9433962, b: 0.51443714, a: 1}
   m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
   m_ExplosionPrefab: {fileID: 151086, guid: 6bc6d0dd8b8428e4ca316513f2cf13c6, type: 3}
 --- !u!114 &6500638202285266384
@@ -5566,7 +5566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerNumber: 1
-  m_Shell: {fileID: 5409530, guid: 008ecb1b70bec724fa2cd34255b0d8f8, type: 3}
+  m_Shell: {fileID: 5409530, guid: 4246795538b37414a866cfe006cf30cb, type: 3}
   m_FireTransform: {fileID: 6500638202278575510}
   m_AimSlider: {fileID: 6500638202285345270}
   m_ShootingAudio: {fileID: 6500638202282209378}
@@ -10369,11 +10369,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eva 02 Model
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: c1c7b5587d88b564f9b8b93d62e9e4e0,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 4f165dba70a7355488279fbed87bfec4, type: 2}
     - target: {fileID: -4216859302048453862, guid: c1c7b5587d88b564f9b8b93d62e9e4e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10444,6 +10439,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4.4996157
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: c1c7b5587d88b564f9b8b93d62e9e4e0,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4f165dba70a7355488279fbed87bfec4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1c7b5587d88b564f9b8b93d62e9e4e0, type: 3}
 --- !u!4 &2797045146561873550 stripped

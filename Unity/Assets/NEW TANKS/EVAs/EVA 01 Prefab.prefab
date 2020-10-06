@@ -5566,7 +5566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerNumber: 1
-  m_Shell: {fileID: 5409530, guid: 008ecb1b70bec724fa2cd34255b0d8f8, type: 3}
+  m_Shell: {fileID: 5409530, guid: 4246795538b37414a866cfe006cf30cb, type: 3}
   m_FireTransform: {fileID: 6500638202278575510}
   m_AimSlider: {fileID: 6500638202285345270}
   m_ShootingAudio: {fileID: 6500638202282209378}
