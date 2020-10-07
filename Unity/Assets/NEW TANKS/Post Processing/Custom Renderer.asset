@@ -52,16 +52,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
     passTag: Outline
-    Event: 300
+    Event: 500
     filterSettings:
       RenderQueueType: 0
       LayerMask:
         serializedVersion: 2
-        m_Bits: 1024
+        m_Bits: 1280
       PassNames: []
     overrideMaterial: {fileID: 2100000, guid: 664fdff2df874db46b964ef2da921cf7, type: 2}
     overrideMaterialPassIndex: 0
-    overrideDepthState: 0
+    overrideDepthState: 1
     depthCompareFunction: 4
     enableWrite: 1
     stencilSettings:

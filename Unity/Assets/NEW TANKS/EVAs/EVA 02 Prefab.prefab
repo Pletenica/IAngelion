@@ -5263,9 +5263,10 @@ GameObject:
   - component: {fileID: 6500638202280286072}
   - component: {fileID: 6500638202282202350}
   - component: {fileID: 6500638202282209378}
-  - component: {fileID: 6500638202285375502}
-  - component: {fileID: 6500638202285345828}
-  - component: {fileID: 6500638202285266384}
+  - component: {fileID: 2424460290597669758}
+  - component: {fileID: 4384576496519444612}
+  - component: {fileID: 6877182305855950581}
+  - component: {fileID: 1595659307496945158}
   m_Layer: 10
   m_Name: EVA 02 Prefab
   m_TagString: Untagged
@@ -5515,7 +5516,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &6500638202285375502
+--- !u!114 &2424460290597669758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5524,7 +5525,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6500638202278313572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e4cc0827b572b5408b2cd8eb8b456b4, type: 3}
+  m_Script: {fileID: 11500000, guid: f733ac5598e49e94d9b9366030fb13ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerNumber: 1
@@ -5535,7 +5536,7 @@ MonoBehaviour:
   m_EngineDriving: {fileID: 8300000, guid: d7ca9fb5aa30155449192b23d7fb3336, type: 3}
   m_PitchRange: 0.1
   EvaAnimator: {fileID: 5213790115160763380}
---- !u!114 &6500638202285345828
+--- !u!114 &4384576496519444612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5544,38 +5545,52 @@ MonoBehaviour:
   m_GameObject: {fileID: 6500638202278313572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030896d0325fa3e4d8d7d4cfe2351cb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_StartingHealth: 100
-  m_Slider: {fileID: 6500638202285288888}
-  m_FillImage: {fileID: 6500638202285350692}
-  m_FullHealthColor: {r: 0.493948, g: 0.9433962, b: 0.51443714, a: 1}
-  m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
-  m_ExplosionPrefab: {fileID: 151086, guid: 6bc6d0dd8b8428e4ca316513f2cf13c6, type: 3}
---- !u!114 &6500638202285266384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6500638202278313572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 184d72ea2424d1443bca885930fe844a, type: 3}
+  m_Script: {fileID: 11500000, guid: 95d34cb3592711949a16d7963efa8220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerNumber: 1
   m_Shell: {fileID: 5409530, guid: 4246795538b37414a866cfe006cf30cb, type: 3}
   m_FireTransform: {fileID: 6500638202278575510}
   m_AimSlider: {fileID: 6500638202285345270}
-  m_ShootingAudio: {fileID: 6500638202282209378}
+  m_ShootingAudio: {fileID: 6500638202282202350}
   m_ChargingClip: {fileID: 8300000, guid: c17f124fcdc0f5446a72f793898bd74b, type: 3}
   m_FireClip: {fileID: 8300000, guid: 672a9941361ad494a99fba36759eca80, type: 3}
   m_MinLaunchForce: 15
   m_MaxLaunchForce: 30
   m_MaxChargeTime: 0.75
   EVAAnimator: {fileID: 5213790115160763380}
+--- !u!114 &6877182305855950581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500638202278313572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19806cf7bf2fc0145bdb9b20320a77e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StartingHealth: 100
+  m_Slider: {fileID: 6500638202285288888}
+  m_FillImage: {fileID: 6500638202285350692}
+  m_FullHealthColor: {r: 0.3695024, g: 0.8862745, b: 0.26274508, a: 1}
+  m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
+  m_ExplosionPrefab: {fileID: 151086, guid: 6bc6d0dd8b8428e4ca316513f2cf13c6, type: 3}
+--- !u!114 &1595659307496945158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500638202278313572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656d0f105d6143247b9c46ef3b526a18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EVAAnimator: {fileID: 5213790115160763380}
+  DanceButtons: []
 --- !u!1 &6500638202278360514
 GameObject:
   m_ObjectHideFlags: 0
