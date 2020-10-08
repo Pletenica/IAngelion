@@ -75,7 +75,6 @@ namespace Complete
             // Store the value of both input axes.
             m_MovementInputValue = Input.GetAxis(m_MovementAxisName);
             m_TurnInputValue = Input.GetAxis(m_TurnAxisName);
-
             EngineAudio();
         }
 
@@ -110,6 +109,8 @@ namespace Complete
 
         private void FixedUpdate()
         {
+            EvaAnimator.SetBool("isLeftTurn", false);
+            EvaAnimator.SetBool("isRightTurn", false);
             // Adjust the rigidbodies position and orientation in FixedUpdate.
             Move();
             Turn();
@@ -149,6 +150,28 @@ namespace Complete
 
             // Apply this rotation to the rigidbody's rotation.
             m_Rigidbody.MoveRotation(m_Rigidbody.rotation * turnRotation);
+
+
+            //Check if Only are turning
+
+            Vector3 movement = transform.forward * m_MovementInputValue * m_Speed * Time.deltaTime;
+
+            if (EvaAnimator != null)
+            {
+                if (movement.magnitude == 0)
+                {
+                    if (m_TurnInputValue < 0)
+                    {
+                        EvaAnimator.SetBool("isLeftTurn", true);
+                        Debug.Log("Left Turn!");
+                    }
+                    else if(m_TurnInputValue>0)
+                    {
+                        EvaAnimator.SetBool("isRightTurn", true);
+                        Debug.Log("Right Turn!");
+                    }
+                }
+            }
         }
     }
 }
