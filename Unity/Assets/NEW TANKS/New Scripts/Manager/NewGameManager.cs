@@ -48,6 +48,7 @@ namespace Complete
 
             PutUIElmentsWell();
             // Once the tanks have been created and the camera is using them as targets, start the game.
+
             StartCoroutine(GameLoop());
         }
 
@@ -73,6 +74,12 @@ namespace Complete
             m_FillImagePlayer2.overrideSprite = m_EVAS[1].m_EVAInfo.EVAImage;
         }
 
+        private void PlayInitAnimations()
+        {
+            m_EVAS[0].PlayDance(1);
+            m_EVAS[1].PlayDance(1);
+            m_EVAS[2].PlayDance(5);
+        }
 
         private void SpawnAllEVAS()
         {
@@ -142,11 +149,9 @@ namespace Complete
 
         private IEnumerator RoundStarting()
         {
-
             // As soon as the round starts reset the tanks and make sure they can't move.
             ResetAllTanks();
             DisableTankControl();
-
 
             // Snap the camera's zoom and position to something appropriate for the reset tanks.
             m_CameraControl.SetStartPositionAndSize();
@@ -220,6 +225,7 @@ namespace Complete
             {
                 m_RoundWinner.m_Wins++;
                 PlusUIWinnerImage(m_RoundWinner.m_Movement.m_PlayerNumber);
+                m_RoundWinner.PlayDance(1);
             }
 
             // Now the winner's score has been incremented, see if someone has one the game.

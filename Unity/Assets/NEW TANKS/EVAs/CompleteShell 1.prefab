@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 10833074}
   - component: {fileID: 11426614}
   m_Layer: 0
-  m_Name: CompleteShell
+  m_Name: CompleteShell 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,6 +193,8 @@ MonoBehaviour:
   m_ExplosionForce: 1000
   m_MaxLifeTime: 2
   m_ExplosionRadius: 5
+  UIImage: {fileID: 0}
+  TimerUIImage: 1
 --- !u!1 &1291295503164410
 GameObject:
   m_ObjectHideFlags: 0
