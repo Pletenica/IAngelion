@@ -5517,9 +5517,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EVAName: Asuka Lengley
   EVADescription: This is la crush de Yuye
-  EVAImage: {fileID: 7061801754131594114, guid: 01d9587e3fa17cf4ba298c0a9e20684d,
+  EVAImage: {fileID: -8618100414209966735, guid: 4368819acc5cd3f4cb62e77569853814,
     type: 3}
   EVAColor: {r: 0.8784314, g: 0.3188933, b: 0.3019608, a: 1}
+  WinImage: {fileID: 4514212434954044665, guid: 4368819acc5cd3f4cb62e77569853814,
+    type: 3}
 --- !u!114 &2424460290597669758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5577,7 +5579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StartingHealth: 100
   m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
-  m_ExplosionPrefab: {fileID: 151086, guid: 6bc6d0dd8b8428e4ca316513f2cf13c6, type: 3}
+  m_ExplosionPrefab: {fileID: 151086, guid: e179b929a209d9545a527cfb219ee845, type: 3}
   m_Slider: {fileID: 6500638202285288888}
   m_FillImage: {fileID: 6500638202285350692}
 --- !u!114 &1595659307496945158

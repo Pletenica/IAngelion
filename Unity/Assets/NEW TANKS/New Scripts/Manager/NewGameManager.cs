@@ -37,12 +37,13 @@ namespace Complete
         private void Start()
         {
             //Init all Wins Image to disable to in future activate one to one depending which player wins the round
-            InitWinImageUI();
+
             // Create the delays so they only have to be made once.
             m_StartWait = new WaitForSeconds(m_StartDelay);
             m_EndWait = new WaitForSeconds(m_EndDelay);
 
             SpawnAllEVAS();
+            InitWinImageUI();
             SetCameraTargets();
 
             PutUIElmentsWell();
@@ -54,10 +55,12 @@ namespace Complete
         {
             for (int i = 0; i < m_WinsPlayer1.Length; i++)
             {
+                m_WinsPlayer1[i].overrideSprite = m_EVAS[0].m_EVAInfo.WinImage;
                 m_WinsPlayer1[i].enabled = false;
             }
             for (int i = 0; i < m_WinsPlayer2.Length; i++)
             {
+                m_WinsPlayer2[i].overrideSprite = m_EVAS[1].m_EVAInfo.WinImage;
                 m_WinsPlayer2[i].enabled = false;
             }
         }

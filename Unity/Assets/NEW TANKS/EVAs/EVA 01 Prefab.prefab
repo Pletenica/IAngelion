@@ -5312,9 +5312,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EVAName: Yuye
   EVADescription: This is el pivardo maximo bro
-  EVAImage: {fileID: -4789670105439411607, guid: 01d9587e3fa17cf4ba298c0a9e20684d,
+  EVAImage: {fileID: 7181639172836397554, guid: 4368819acc5cd3f4cb62e77569853814,
     type: 3}
   EVAColor: {r: 0.4, g: 0.49097356, b: 0.8980392, a: 1}
+  WinImage: {fileID: 984805450205939974, guid: 4368819acc5cd3f4cb62e77569853814, type: 3}
 --- !u!114 &3494967377899275730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5372,7 +5373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StartingHealth: 100
   m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
-  m_ExplosionPrefab: {fileID: 151086, guid: 6bc6d0dd8b8428e4ca316513f2cf13c6, type: 3}
+  m_ExplosionPrefab: {fileID: 151086, guid: e179b929a209d9545a527cfb219ee845, type: 3}
   m_Slider: {fileID: 265960791024520663}
   m_FillImage: {fileID: 299316167712230318}
 --- !u!114 &6456172990402835397
@@ -10433,6 +10434,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: c3717442e6e542644886c1db286088dd,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2b70207384dc3ec469af3354d85fd791, type: 2}
     - target: {fileID: -4216859302048453862, guid: c3717442e6e542644886c1db286088dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10503,11 +10509,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4.4678
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: c3717442e6e542644886c1db286088dd,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 2b70207384dc3ec469af3354d85fd791, type: 2}
     - target: {fileID: -3491872099148682982, guid: c3717442e6e542644886c1db286088dd,
         type: 3}
       propertyPath: m_Layer

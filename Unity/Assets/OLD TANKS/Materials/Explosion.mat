@@ -8,18 +8,21 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Explosion
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: 10101, guid: 0000000000000000e000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _ENVIRONMENTREFLECTIONS_OFF
-  m_LightmapFlags: 1
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2050
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_360DAB3E:
+        m_Texture: {fileID: 2800000, guid: 58838700e7be2a04d84d019a01566ca5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 8e2e7f1c0de3a1e4bab7041325aef152, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -66,6 +69,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - PixelSnap: 0
+    - Vector1_2CD8C999: 0
+    - Vector1_9E0F3635: 0.5
+    - Vector1_B3ABDB2A: 0.01
+    - Vector1_CE235D9A: 0.5
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -95,8 +102,10 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_6430E9B: {r: 0, g: 0, b: 0, a: 0}
+    - Color_E93DAA37: {r: 0.8490566, g: 0.4125134, b: 0.4125134, a: 0}
     - _BaseColor: {r: 0.6764706, g: 0.64779246, b: 0.48745674, a: 1}
-    - _Color: {r: 0.6764706, g: 0.64779246, b: 0.48745674, a: 1}
+    - _Color: {r: 0.6320754, g: 0.62729263, b: 0.59927905, a: 1}
     - _EmisColor: {r: 0.5294118, g: 0.5294118, b: 0.5294118, a: 0}
     - _Emission: {r: 0.029411793, g: 0.029411793, b: 0.029411793, a: 0}
     - _EmissionColor: {r: 0.50735295, g: 0.26242402, b: 0, a: 1}

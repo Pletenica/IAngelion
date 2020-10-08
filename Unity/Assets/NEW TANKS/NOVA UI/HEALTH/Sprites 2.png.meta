@@ -1,19 +1,28 @@
 fileFormatVersion: 2
-guid: 01d9587e3fa17cf4ba298c0a9e20684d
+guid: 4368819acc5cd3f4cb62e77569853814
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4773600122041589604
-    second: Sprites_0
+      213: 1293126565115306164
+    second: Sprites 2_0
   - first:
-      213: -4789670105439411607
-    second: Sprites_1
+      213: 7181639172836397554
+    second: Sprites 2_1
   - first:
-      213: 7061801754131594114
-    second: Sprites_2
+      213: -8618100414209966735
+    second: Sprites 2_2
   - first:
-      213: -7377819553374844296
-    second: Sprites_3
+      213: -5782935310169651758
+    second: Sprites 2_3
+  - first:
+      213: 984805450205939974
+    second: Sprites 2_4
+  - first:
+      213: -8732350090228108916
+    second: Sprites 2_5
+  - first:
+      213: 4514212434954044665
+    second: Sprites 2_6
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -118,7 +127,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprites_0
+      name: Sprites 2_0
       rect:
         serializedVersion: 2
         x: 58
@@ -132,17 +141,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6658e2715cd9e51428e9824d958b6d88
-      internalID: 4773600122041589604
+      spriteID: b6359f874a01a8a4ba06e884d84f9e07
+      internalID: 1293126565115306164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites_1
+      name: Sprites 2_1
       rect:
         serializedVersion: 2
-        x: 812
+        x: 808
         y: 2062
         width: 653
         height: 867
@@ -153,14 +162,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4c7dce534593e745a29113e035c99b3
-      internalID: -4789670105439411607
+      spriteID: aee9afa4bb0964f449940f9a4a2d602d
+      internalID: 7181639172836397554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites_2
+      name: Sprites 2_2
       rect:
         serializedVersion: 2
         x: 1568
@@ -174,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf8e14a3f96147d468c7e17ac3c51e2b
-      internalID: 7061801754131594114
+      spriteID: 5432c8748098f8d44985ad86ba15a63b
+      internalID: -8618100414209966735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites_3
+      name: Sprites 2_3
       rect:
         serializedVersion: 2
         x: 58
@@ -195,8 +204,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd11a09d6acc68348ab0905b1e256eea
-      internalID: -7377819553374844296
+      spriteID: aa3ea7aca91dd7f44814364fec5fa94b
+      internalID: -5782935310169651758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites 2_4
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 499
+        width: 723
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f22e166928b8d74889ef03fdf6e087b
+      internalID: 984805450205939974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites 2_5
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 515
+        width: 706
+        height: 706
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e3703a4cfb81d1409fde444dd177d78
+      internalID: -8732350090228108916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites 2_6
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 543
+        width: 678
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef083ed057a147498b46fc96c788b8d
+      internalID: 4514212434954044665
       vertices: []
       indices: 
       edges: []
@@ -204,7 +276,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: bc534bae9acb5eb4c99c9ac0fbe216ad
+    spriteID: da7bd805aa5b72c4aa7d8481d04abc75
     internalID: 0
     vertices: []
     indices: 

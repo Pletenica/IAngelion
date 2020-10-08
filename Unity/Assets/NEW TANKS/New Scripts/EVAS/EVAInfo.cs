@@ -11,5 +11,5 @@ public class EVAInfo : MonoBehaviour
     public string EVADescription;
     public Sprite EVAImage;
     public Color EVAColor;
-
+    public Sprite WinImage;
 }
