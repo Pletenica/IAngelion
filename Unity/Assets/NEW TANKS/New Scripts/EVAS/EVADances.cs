@@ -34,7 +34,7 @@ public class EVADances : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F5)) PlayDance(5);
     }
 
-    void PlayDance(int dance_num)
+    public void PlayDance(int dance_num)
     {
         EVAAnimator.SetInteger("Dancing", dance_num);
     }

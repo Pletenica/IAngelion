@@ -65,7 +65,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: c7dd97e9cd879304795b366cbf187bfe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e9471faa29f02244a871c9605aad96cc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -230,7 +230,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6500638202300645370}
   - component: {fileID: 6500638202285288888}
-  - component: {fileID: 6500638202285354798}
   m_Layer: 5
   m_Name: HealthSlider
   m_TagString: Untagged
@@ -311,19 +310,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &6500638202285354798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6500638202278279616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeac210ca39225b458bb07429e573f2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UseRelativeRotation: 1
 --- !u!1 &6500638202278294782
 GameObject:
   m_ObjectHideFlags: 0
@@ -5177,8 +5163,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6500638202278313140}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.8902, y: 2.8902, z: 2.8902}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 2.1177392, y: 2.1177392, z: 2.1177392}
   m_Children:
   - {fileID: 6500638202300645370}
   - {fileID: 6500638202300536962}
@@ -5187,7 +5173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.10000038}
+  m_AnchoredPosition: {x: 0, y: 0.74}
   m_SizeDelta: {x: 3.5, y: 3.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6500638202300606774
@@ -5263,6 +5249,7 @@ GameObject:
   - component: {fileID: 6500638202280286072}
   - component: {fileID: 6500638202282202350}
   - component: {fileID: 6500638202282209378}
+  - component: {fileID: -1516856009469603616}
   - component: {fileID: 2424460290597669758}
   - component: {fileID: 4384576496519444612}
   - component: {fileID: 6877182305855950581}
@@ -5516,6 +5503,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &-1516856009469603616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500638202278313572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a5410a0eb9e4f488ad9d2a0fa28cec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EVAName: Asuka Lengley
+  EVADescription: This is la crush de Yuye
+  EVAImage: {fileID: 7061801754131594114, guid: 01d9587e3fa17cf4ba298c0a9e20684d,
+    type: 3}
+  EVAColor: {r: 0.8784314, g: 0.3188933, b: 0.3019608, a: 1}
 --- !u!114 &2424460290597669758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5572,11 +5576,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_StartingHealth: 100
-  m_Slider: {fileID: 6500638202285288888}
-  m_FillImage: {fileID: 6500638202285350692}
-  m_FullHealthColor: {r: 0.3695024, g: 0.8862745, b: 0.26274508, a: 1}
   m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
   m_ExplosionPrefab: {fileID: 151086, guid: 6bc6d0dd8b8428e4ca316513f2cf13c6, type: 3}
+  m_Slider: {fileID: 6500638202285288888}
+  m_FillImage: {fileID: 6500638202285350692}
 --- !u!114 &1595659307496945158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10356,14 +10359,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.77205884, g: 0.16463022, b: 0.16463022, a: 0.5882353}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: c7dd97e9cd879304795b366cbf187bfe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e9471faa29f02244a871c9605aad96cc, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -7,9 +7,12 @@ namespace Complete
 {
     public class NewGameManager : MonoBehaviour
     {
+        [Header("GameProperties")]
         public int m_NumRoundsToWin = 5;            // The number of rounds a single player has to win to win the game.
         public float m_StartDelay = 3f;             // The delay between the start of RoundStarting and RoundPlaying phases.
         public float m_EndDelay = 3f;               // The delay between the end of RoundPlaying and RoundEnding phases.
+
+        [Header("Objects")]
         public CameraControl m_CameraControl;       // Reference to the CameraControl script for control during different phases.
         public Text m_MessageText;                  // Reference to the overlay Text to display winning text, etc.
         public GameObject[] m_EVAPrefab;            // Reference to the prefabs the players will control.
@@ -21,9 +24,20 @@ namespace Complete
         private EVAManager m_RoundWinner;          // Reference to the winner of the current round.  Used to make an announcement of who won.
         private EVAManager m_GameWinner;           // Reference to the winner of the game.  Used to make an announcement of who won.
 
+        //UI ELEMENTS
+        [Header("UI Elements")]
+        public Image m_FillImagePlayer1;
+        public Text m_TextPlayer1;
+        public Image m_FillImagePlayer2;
+        public Text m_TextPlayer2;
+        public Image[] m_WinsPlayer1;
+        public Image[] m_WinsPlayer2;
+
 
         private void Start()
         {
+            //Init all Wins Image to disable to in future activate one to one depending which player wins the round
+            InitWinImageUI();
             // Create the delays so they only have to be made once.
             m_StartWait = new WaitForSeconds(m_StartDelay);
             m_EndWait = new WaitForSeconds(m_EndDelay);
@@ -31,8 +45,29 @@ namespace Complete
             SpawnAllEVAS();
             SetCameraTargets();
 
+            PutUIElmentsWell();
             // Once the tanks have been created and the camera is using them as targets, start the game.
             StartCoroutine(GameLoop());
+        }
+
+        private void InitWinImageUI()
+        {
+            for (int i = 0; i < m_WinsPlayer1.Length; i++)
+            {
+                m_WinsPlayer1[i].enabled = false;
+            }
+            for (int i = 0; i < m_WinsPlayer2.Length; i++)
+            {
+                m_WinsPlayer2[i].enabled = false;
+            }
+        }
+
+        private void PutUIElmentsWell()
+        {
+            m_TextPlayer1.text = m_EVAS[0].m_EVAInfo.EVAName;
+            m_FillImagePlayer1.overrideSprite = m_EVAS[0].m_EVAInfo.EVAImage;
+            m_TextPlayer2.text = m_EVAS[1].m_EVAInfo.EVAName;
+            m_FillImagePlayer2.overrideSprite = m_EVAS[1].m_EVAInfo.EVAImage;
         }
 
 
@@ -71,6 +106,7 @@ namespace Complete
         private IEnumerator GameLoop()
         {
             // Start off by running the 'RoundStarting' coroutine but don't return until it's finished.
+            //PlayInitEndDances(1);
             yield return StartCoroutine(RoundStarting());
 
             // Once the 'RoundStarting' coroutine is finished, run the 'RoundPlaying' coroutine but don't return until it's finished.
@@ -93,12 +129,21 @@ namespace Complete
             }
         }
 
+        public void PlayInitEndDances(int id)
+        {
+            for (int i = 0; i <= m_EVAS.Length; i++)
+            {
+                m_EVAS[i].PlayDance(id);
+            }
+        }
 
         private IEnumerator RoundStarting()
         {
+
             // As soon as the round starts reset the tanks and make sure they can't move.
             ResetAllTanks();
             DisableTankControl();
+
 
             // Snap the camera's zoom and position to something appropriate for the reset tanks.
             m_CameraControl.SetStartPositionAndSize();
@@ -115,7 +160,7 @@ namespace Complete
         private IEnumerator RoundPlaying()
         {
             // As soon as the round begins playing let the players control the tanks.
-            EnableTankControl();
+            EnableEVAControl();
 
             // Clear the text from the screen.
             m_MessageText.text = string.Empty;
@@ -128,6 +173,33 @@ namespace Complete
             }
         }
 
+        private void PlusUIWinnerImage(int _playernumber)
+        {
+            if (_playernumber == 1)
+            {
+                for (int i = 0; i < m_WinsPlayer1.Length; i++)
+                {
+                    if (m_WinsPlayer1[i].IsActive()) continue;
+                    else
+                    {
+                        m_WinsPlayer1[i].enabled = true;
+                        return;
+                    }
+                }
+            }
+            else if (_playernumber == 2)
+            {
+                for (int i = 0; i < m_WinsPlayer2.Length; i++)
+                {
+                    if (m_WinsPlayer2[i].IsActive()) continue;
+                    else
+                    {
+                        m_WinsPlayer2[i].enabled = true;
+                        return;
+                    }
+                }
+            }
+        }
 
         private IEnumerator RoundEnding()
         {
@@ -142,7 +214,10 @@ namespace Complete
 
             // If there is a winner, increment their score.
             if (m_RoundWinner != null)
+            {
                 m_RoundWinner.m_Wins++;
+                PlusUIWinnerImage(m_RoundWinner.m_Movement.m_PlayerNumber);
+            }
 
             // Now the winner's score has been incremented, see if someone has one the game.
             m_GameWinner = GetGameWinner();
@@ -245,7 +320,7 @@ namespace Complete
         }
 
 
-        private void EnableTankControl()
+        private void EnableEVAControl()
         {
             for (int i = 0; i < m_EVAS.Length; i++)
             {
