@@ -5040,7 +5040,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6500638202278548790}
   - component: {fileID: 6500638202283464942}
-  - component: {fileID: 6500638202280286072}
   - component: {fileID: 6500638202282202350}
   - component: {fileID: 6500638202282209378}
   - component: {fileID: -5095209183634095032}
@@ -5048,6 +5047,7 @@ GameObject:
   - component: {fileID: 317685482742448920}
   - component: {fileID: 7667351565696217468}
   - component: {fileID: 6456172990402835397}
+  - component: {fileID: 4391396974307842087}
   m_Layer: 9
   m_Name: EVA 01 Prefab
   m_TagString: Untagged
@@ -5091,19 +5091,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!65 &6500638202280286072
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6500638202278313572}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5, y: 5, z: 5}
-  m_Center: {x: 0, y: 2.5, z: 0.01}
 --- !u!82 &6500638202282202350
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5310,12 +5297,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a5410a0eb9e4f488ad9d2a0fa28cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EVAName: El llorica Lloron
+  EVAName: El Shinji llorica maricon
   EVADescription: This is el pivardo maximo bro
-  EVAImage: {fileID: 7181639172836397554, guid: 4368819acc5cd3f4cb62e77569853814,
+  EVAImage: {fileID: -1996780945487126483, guid: 71c6da32867a31245a10a6329a04bd71,
     type: 3}
   EVAColor: {r: 0.4, g: 0.49097356, b: 0.8980392, a: 1}
-  WinImage: {fileID: 984805450205939974, guid: 4368819acc5cd3f4cb62e77569853814, type: 3}
+  WinImage: {fileID: -7361104481820867367, guid: 71c6da32867a31245a10a6329a04bd71,
+    type: 3}
 --- !u!114 &3494967377899275730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5390,6 +5378,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EVAAnimator: {fileID: 2543807863624463704}
   DanceButtons: []
+--- !u!136 &4391396974307842087
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500638202278313572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.85
+  m_Height: 9.74
+  m_Direction: 1
+  m_Center: {x: 0, y: 4.7, z: 0}
 --- !u!1 &6500638202278360514
 GameObject:
   m_ObjectHideFlags: 0

@@ -284,7 +284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 488946, guid: 312c52d27be2d2d42acea3ccebc4694b, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2399054, guid: 312c52d27be2d2d42acea3ccebc4694b, type: 3}
       propertyPath: m_MinimumChartSize
@@ -388,8 +388,8 @@ MonoBehaviour:
   m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: HorizontalUI
-  m_VerticalAxis: VerticalUI
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
@@ -473,7 +473,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1304999367
 AudioSource:
@@ -790,7 +790,7 @@ MonoBehaviour:
   m_CameraControl: {fileID: 1771596988}
   m_MessageText: {fileID: 102963701}
   m_EVAPrefab:
-  - {fileID: 6500638202278313572, guid: 47d32f632567c9a4cb018aebaa7e0dec, type: 3}
+  - {fileID: 6500638202278313572, guid: b08a119885ab96942ae00c3fe62b6fe5, type: 3}
   - {fileID: 6500638202278313572, guid: 731a2398e22ac4c449aa993dd9844754, type: 3}
   - {fileID: 6500638202278313572, guid: d1551cb8ffddf6945aba490ca8df0090, type: 3}
   m_EVAS:
@@ -866,7 +866,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2573566747660552156
 PrefabInstance:
@@ -918,7 +918,7 @@ PrefabInstance:
     - target: {fileID: 2573566748235797416, guid: cc010c9c8bacfc74eb63d2e579c89206,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2573566748235797416, guid: cc010c9c8bacfc74eb63d2e579c89206,
         type: 3}
@@ -985,15 +985,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2573566746402608248, guid: cc010c9c8bacfc74eb63d2e579c89206,
+    - target: {fileID: 2573566747494904935, guid: cc010c9c8bacfc74eb63d2e579c89206,
         type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2573566746402608248, guid: cc010c9c8bacfc74eb63d2e579c89206,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.20784314
+      propertyPath: m_AnchoredPosition.x
+      value: -274.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc010c9c8bacfc74eb63d2e579c89206, type: 3}
@@ -1022,7 +1017,7 @@ PrefabInstance:
     - target: {fileID: 4115621877973807848, guid: dc17f5c4de7e71d4b80fac20259832a4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.11
       objectReference: {fileID: 0}
     - target: {fileID: 4115621877973807848, guid: dc17f5c4de7e71d4b80fac20259832a4,
         type: 3}

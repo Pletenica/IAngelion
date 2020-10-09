@@ -5246,13 +5246,14 @@ GameObject:
   m_Component:
   - component: {fileID: 6500638202278548790}
   - component: {fileID: 6500638202283464942}
-  - component: {fileID: 6500638202280286072}
   - component: {fileID: 6500638202282202350}
   - component: {fileID: 6500638202282209378}
   - component: {fileID: 4315371302674935605}
   - component: {fileID: 7990342392836497527}
   - component: {fileID: 6778691768688365407}
   - component: {fileID: 6318267608695385200}
+  - component: {fileID: 8395718582409724460}
+  - component: {fileID: 6405386010224063313}
   m_Layer: 10
   m_Name: EVA 00 Prefab
   m_TagString: Untagged
@@ -5295,19 +5296,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!65 &6500638202280286072
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6500638202278313572}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5, y: 5, z: 5}
-  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!82 &6500638202282202350
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5516,10 +5504,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EVAName: La gotica rara
   EVADescription: This is la gotica
-  EVAImage: {fileID: 1293126565115306164, guid: 4368819acc5cd3f4cb62e77569853814,
+  EVAImage: {fileID: -4163760652787337862, guid: 71c6da32867a31245a10a6329a04bd71,
     type: 3}
   EVAColor: {r: 0.8396226, g: 0.5690295, b: 0.23366857, a: 1}
-  WinImage: {fileID: -8732350090228108916, guid: 4368819acc5cd3f4cb62e77569853814,
+  WinImage: {fileID: -5105819029347269749, guid: 71c6da32867a31245a10a6329a04bd71,
     type: 3}
 --- !u!114 &7990342392836497527
 MonoBehaviour:
@@ -5581,6 +5569,34 @@ MonoBehaviour:
   m_ExplosionPrefab: {fileID: 151086, guid: e179b929a209d9545a527cfb219ee845, type: 3}
   m_Slider: {fileID: 6500638202285288888}
   m_FillImage: {fileID: 6500638202285350692}
+--- !u!114 &8395718582409724460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500638202278313572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656d0f105d6143247b9c46ef3b526a18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EVAAnimator: {fileID: 5848042579948389887}
+  DanceButtons: []
+--- !u!136 &6405386010224063313
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500638202278313572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.85
+  m_Height: 9.74
+  m_Direction: 1
+  m_Center: {x: 0, y: 4.7, z: 0}
 --- !u!1 &6500638202278360514
 GameObject:
   m_ObjectHideFlags: 0
@@ -10369,6 +10385,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6500638202278548790}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 7abcaf43914161444afec695acfbdcfe,
+        type: 3}
+      propertyPath: m_Name
+      value: EVA 00 Model
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7abcaf43914161444afec695acfbdcfe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 129350255495253916, guid: 7abcaf43914161444afec695acfbdcfe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133913965574556032, guid: 7abcaf43914161444afec695acfbdcfe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7abcaf43914161444afec695acfbdcfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10444,26 +10480,6 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 55ac4ad34a8c7d54581d956a8cc2632f, type: 2}
-    - target: {fileID: -927199367670048503, guid: 7abcaf43914161444afec695acfbdcfe,
-        type: 3}
-      propertyPath: m_Name
-      value: EVA 00 Model
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 7abcaf43914161444afec695acfbdcfe,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 129350255495253916, guid: 7abcaf43914161444afec695acfbdcfe,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133913965574556032, guid: 7abcaf43914161444afec695acfbdcfe,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: -3491872099148682982, guid: 7abcaf43914161444afec695acfbdcfe,
         type: 3}
       propertyPath: m_Layer
