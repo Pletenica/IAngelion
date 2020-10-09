@@ -8,6 +8,8 @@ namespace Complete
     public class NewGameManager : MonoBehaviour
     {
         [Header("GameProperties")]
+        public GameObject m_DaddyManager;        //This is the manager that controlles all into scenes.
+        private int WhichEVA;
         public int m_NumRoundsToWin = 5;            // The number of rounds a single player has to win to win the game.
         public float m_StartDelay = 3f;             // The delay between the start of RoundStarting and RoundPlaying phases.
         public float m_EndDelay = 3f;               // The delay between the end of RoundPlaying and RoundEnding phases.
@@ -16,7 +18,7 @@ namespace Complete
         public CameraControl m_CameraControl;       // Reference to the CameraControl script for control during different phases.
         public Text m_MessageText;                  // Reference to the overlay Text to display winning text, etc.
         public GameObject[] m_EVAPrefab;            // Reference to the prefabs the players will control.
-        public EVAManager[] m_EVAS;               // A collection of managers for enabling and disabling different aspects of the EVAS.
+        public EVAManager[] m_EVAS;                 // A collection of managers for enabling and disabling different aspects of the EVAS.
 
         private int m_RoundNumber;                  // Which round the game is currently on.
         private WaitForSeconds m_StartWait;         // Used to have a delay whilst the round starts.
@@ -36,8 +38,9 @@ namespace Complete
 
         private void Start()
         {
+            FindSceneManager();
             //Init all Wins Image to disable to in future activate one to one depending which player wins the round
-
+            WhichEVA = m_DaddyManager.GetComponent<ManagerScenes>().EVAChoose;
             // Create the delays so they only have to be made once.
             m_StartWait = new WaitForSeconds(m_StartDelay);
             m_EndWait = new WaitForSeconds(m_EndDelay);
@@ -52,6 +55,11 @@ namespace Complete
             StartCoroutine(GameLoop());
         }
 
+        private void FindSceneManager()
+        {
+            m_DaddyManager = GameObject.Find("DaddyManager");
+        }
+
         private void InitWinImageUI()
         {
             for (int i = 0; i < m_WinsPlayer1.Length; i++)
@@ -61,7 +69,7 @@ namespace Complete
             }
             for (int i = 0; i < m_WinsPlayer2.Length; i++)
             {
-                m_WinsPlayer2[i].overrideSprite = m_EVAS[1].m_EVAInfo.WinImage;
+                m_WinsPlayer2[i].overrideSprite = m_EVAS[WhichEVA].m_EVAInfo.WinImage;
                 m_WinsPlayer2[i].enabled = false;
             }
         }
@@ -70,8 +78,8 @@ namespace Complete
         {
             m_TextPlayer1.text = m_EVAS[0].m_EVAInfo.EVAName;
             m_FillImagePlayer1.overrideSprite = m_EVAS[0].m_EVAInfo.EVAImage;
-            m_TextPlayer2.text = m_EVAS[1].m_EVAInfo.EVAName;
-            m_FillImagePlayer2.overrideSprite = m_EVAS[1].m_EVAInfo.EVAImage;
+            m_TextPlayer2.text = m_EVAS[WhichEVA].m_EVAInfo.EVAName;
+            m_FillImagePlayer2.overrideSprite = m_EVAS[WhichEVA].m_EVAInfo.EVAImage;
         }
 
         private void PlayInitAnimations()
@@ -79,33 +87,37 @@ namespace Complete
             m_EVAS[0].PlayDance(1);
             m_EVAS[1].PlayDance(1);
             m_EVAS[2].PlayDance(5);
+            m_EVAS[3].PlayDance(5);
         }
 
         private void SpawnAllEVAS()
         {
-            // For all the tanks...
-            for (int i = 0; i < m_EVAS.Length; i++)
-            {
-                // ... create them, set their player number and references needed for control.
-                m_EVAS[i].m_Instance =
-                    Instantiate(m_EVAPrefab[i], m_EVAS[i].m_SpawnPoint.position, m_EVAS[i].m_SpawnPoint.rotation) as GameObject;
-                m_EVAS[i].m_PlayerNumber = i + 1;
-                m_EVAS[i].Setup();
-            }
+            //Spawn Angel
+            m_EVAS[0].m_Instance = Instantiate(m_EVAPrefab[0], m_EVAS[0].m_SpawnPoint.position, m_EVAS[0].m_SpawnPoint.rotation) as GameObject;
+            m_EVAS[0].m_PlayerNumber = 1;
+            m_EVAS[0].Setup();
+
+            //Spawn EVA
+            m_EVAS[WhichEVA].m_Instance = Instantiate(m_EVAPrefab[WhichEVA], m_EVAS[WhichEVA].m_SpawnPoint.position, m_EVAS[WhichEVA].m_SpawnPoint.rotation) as GameObject;
+            m_EVAS[WhichEVA].m_PlayerNumber = 2;
+            m_EVAS[WhichEVA].Setup();
         }
 
 
         private void SetCameraTargets()
         {
             // Create a collection of transforms the same size as the number of tanks.
-            Transform[] targets = new Transform[m_EVAS.Length];
+            Transform[] targets = new Transform[2];
+
+            targets[0] = m_EVAS[0].m_Instance.transform;
+            targets[1] = m_EVAS[WhichEVA].m_Instance.transform;
 
             // For each of these transforms...
-            for (int i = 0; i < targets.Length; i++)
-            {
-                // ... set it to the appropriate tank transform.
-                targets[i] = m_EVAS[i].m_Instance.transform;
-            }
+            //for (int i = 0; i < targets.Length; i++)
+            //{
+            //    // ... set it to the appropriate tank transform.
+            //    targets[i] = m_EVAS[i].m_Instance.transform;
+            //}
 
             // These are the targets the camera should follow.
             m_CameraControl.m_Targets = targets;
@@ -246,13 +258,10 @@ namespace Complete
             // Start the count of tanks left at zero.
             int numTanksLeft = 0;
 
-            // Go through all the tanks...
-            for (int i = 0; i < m_EVAS.Length; i++)
-            {
-                // ... and if they are active, increment the counter.
-                if (m_EVAS[i].m_Instance.activeSelf)
-                    numTanksLeft++;
-            }
+            if (m_EVAS[0].m_Instance.activeSelf)
+                numTanksLeft++;
+            if (m_EVAS[WhichEVA].m_Instance.activeSelf)
+                numTanksLeft++;
 
             // If there are one or fewer tanks remaining return true, otherwise return false.
             return numTanksLeft <= 1;
@@ -263,13 +272,11 @@ namespace Complete
         // This function is called with the assumption that 1 or fewer tanks are currently active.
         private EVAManager GetRoundWinner()
         {
-            // Go through all the tanks...
-            for (int i = 0; i < m_EVAS.Length; i++)
-            {
-                // ... and if one of them is active, it is the winner so return it.
-                if (m_EVAS[i].m_Instance.activeSelf)
-                    return m_EVAS[i];
-            }
+            if (m_EVAS[0].m_Instance.activeSelf)
+                  return m_EVAS[0];
+
+            else if (m_EVAS[WhichEVA].m_Instance.activeSelf)
+                return m_EVAS[WhichEVA];
 
             // If none of the tanks are active it is a draw so return null.
             return null;
@@ -279,13 +286,11 @@ namespace Complete
         // This function is to find out if there is a winner of the game.
         private EVAManager GetGameWinner()
         {
-            // Go through all the tanks...
-            for (int i = 0; i < m_EVAS.Length; i++)
-            {
-                // ... and if one of them has enough rounds to win the game, return it.
-                if (m_EVAS[i].m_Wins == m_NumRoundsToWin)
-                    return m_EVAS[i];
-            }
+
+            if (m_EVAS[0].m_Wins == m_NumRoundsToWin)
+                return m_EVAS[0];
+            else if (m_EVAS[WhichEVA].m_Wins == m_NumRoundsToWin)
+                return m_EVAS[WhichEVA];
 
             // If no tanks have enough rounds to win, return null.
             return null;
@@ -306,10 +311,9 @@ namespace Complete
             message += "\n\n\n\n";
 
             // Go through all the tanks and add each of their scores to the message.
-            for (int i = 0; i < m_EVAS.Length; i++)
-            {
-                message += m_EVAS[i].m_ColoredPlayerText + ": " + m_EVAS[i].m_Wins + " WINS\n";
-            }
+            message += m_EVAS[0].m_ColoredPlayerText + ": " + m_EVAS[0].m_Wins + " WINS\n";
+            message += m_EVAS[WhichEVA].m_ColoredPlayerText + ": " + m_EVAS[WhichEVA].m_Wins + " WINS\n";
+
 
             // If there is a game winner, change the entire message to reflect that.
             if (m_GameWinner != null)
@@ -322,28 +326,22 @@ namespace Complete
         // This function is used to turn all the tanks back on and reset their positions and properties.
         private void ResetAllTanks()
         {
-            for (int i = 0; i < m_EVAS.Length; i++)
-            {
-                m_EVAS[i].Reset();
-            }
+            m_EVAS[0].Reset();
+            m_EVAS[WhichEVA].Reset();
         }
 
 
         private void EnableEVAControl()
         {
-            for (int i = 0; i < m_EVAS.Length; i++)
-            {
-                m_EVAS[i].EnableControl();
-            }
+            m_EVAS[0].EnableControl();
+            m_EVAS[WhichEVA].EnableControl();
         }
 
 
         private void DisableTankControl()
         {
-            for (int i = 0; i < m_EVAS.Length; i++)
-            {
-                m_EVAS[i].DisableControl();
-            }
+            m_EVAS[0].DisableControl();
+            m_EVAS[WhichEVA].DisableControl();
         }
     }
 }

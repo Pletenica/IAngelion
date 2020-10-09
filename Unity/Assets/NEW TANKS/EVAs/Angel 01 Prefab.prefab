@@ -5247,13 +5247,13 @@ GameObject:
   - component: {fileID: 6500638202278548790}
   - component: {fileID: 6500638202283464942}
   - component: {fileID: 6500638202282202350}
+  - component: {fileID: 839556667713998535}
   - component: {fileID: 6500638202282209378}
   - component: {fileID: 4315371302674935605}
   - component: {fileID: 7990342392836497527}
   - component: {fileID: 6778691768688365407}
   - component: {fileID: 6318267608695385200}
   - component: {fileID: -1044100292588647229}
-  - component: {fileID: 839556667713998535}
   m_Layer: 10
   m_Name: Angel 01 Prefab
   m_TagString: Untagged
@@ -5393,6 +5393,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!136 &839556667713998535
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500638202278313572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.85
+  m_Height: 9.74
+  m_Direction: 1
+  m_Center: {x: 0, y: 4.7, z: 0}
 --- !u!82 &6500638202282209378
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5582,20 +5596,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EVAAnimator: {fileID: 7411667137009656092}
   DanceButtons: []
---- !u!136 &839556667713998535
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6500638202278313572}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1.85
-  m_Height: 9.74
-  m_Direction: 1
-  m_Center: {x: 0, y: 4.7, z: 0}
 --- !u!1 &6500638202278360514
 GameObject:
   m_ObjectHideFlags: 0

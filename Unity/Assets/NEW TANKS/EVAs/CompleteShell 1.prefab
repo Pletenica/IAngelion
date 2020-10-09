@@ -186,15 +186,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TankMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1024
   m_ExplosionParticles: {fileID: 198540207889710882}
   m_ExplosionAudio: {fileID: 82110601301053950}
   m_MaxDamage: 100
   m_ExplosionForce: 1000
   m_MaxLifeTime: 2
   m_ExplosionRadius: 5
-  UIImage: {fileID: 0}
-  TimerUIImage: 1
 --- !u!1 &1291295503164410
 GameObject:
   m_ObjectHideFlags: 0
