@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Calavera 1
-  m_Shader: {fileID: -6465566751694194690, guid: f1bd4f366d1fb064bb885dbe347e3017,
+  m_Shader: {fileID: -6465566751694194690, guid: e13b8021d55c18847be8f5e02bbbe45f,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -35,6 +35,10 @@ Material:
     m_TexEnvs:
     - Texture2D_360DAB3E:
         m_Texture: {fileID: 2800000, guid: 309430dd09aa88f449ad4a5619ede12a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_A47566FE:
+        m_Texture: {fileID: 2800000, guid: ff53280fc3424a44fac75ccf1378b270, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
