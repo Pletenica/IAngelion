@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Menu.unity
     guid: 79b7ccb46a0f5f24b8c20b7138ce3e8e
   - enabled: 1
+    path: Assets/CharacterSelection.unity
+    guid: ffa5faf247c4e034ea00f5f98594408d
+  - enabled: 1
     path: Assets/MainPlayGame.unity
     guid: 37961ba4d27bd46428d20c2ffe403dc3
   m_configObjects: {}
