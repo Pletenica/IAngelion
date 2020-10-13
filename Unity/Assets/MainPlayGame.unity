@@ -675,7 +675,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4f9398c362077dd45bb3394c21a1211b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1210,7 +1210,7 @@ PrefabInstance:
     - target: {fileID: 7578352564232125459, guid: 13b2d801eb99d524bbdcf111c6f7d8c3,
         type: 3}
       propertyPath: EVAChoose
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13b2d801eb99d524bbdcf111c6f7d8c3, type: 3}
