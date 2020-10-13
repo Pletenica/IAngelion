@@ -95,11 +95,13 @@ namespace Complete
             //Spawn Angel
             m_EVAS[0].m_Instance = Instantiate(m_EVAPrefab[0], m_EVAS[0].m_SpawnPoint.position, m_EVAS[0].m_SpawnPoint.rotation) as GameObject;
             m_EVAS[0].m_PlayerNumber = 1;
+            m_EVAS[0].m_Instance.name = "Angel Player";
             m_EVAS[0].Setup();
 
             //Spawn EVA
             m_EVAS[WhichEVA].m_Instance = Instantiate(m_EVAPrefab[WhichEVA], m_EVAS[WhichEVA].m_SpawnPoint.position, m_EVAS[WhichEVA].m_SpawnPoint.rotation) as GameObject;
             m_EVAS[WhichEVA].m_PlayerNumber = 2;
+            m_EVAS[WhichEVA].m_Instance.name = "EVA Player";
             m_EVAS[WhichEVA].Setup();
         }
 
