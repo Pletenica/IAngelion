@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/StartMenu.unity
     guid: 79b7ccb46a0f5f24b8c20b7138ce3e8e
   - enabled: 1
+    path: Assets/MainMenu.unity
+    guid: aba70aec095b6cc4c8d99aba6630ee85
+  - enabled: 1
     path: Assets/CharacterSelection.unity
     guid: ffa5faf247c4e034ea00f5f98594408d
   - enabled: 1
