@@ -17,6 +17,7 @@ namespace Complete
         [Header("Objects")]
         public CameraControl m_CameraControl;       // Reference to the CameraControl script for control during different phases.
         public Text m_MessageText;                  // Reference to the overlay Text to display winning text, etc.
+        public Image m_ImageRound;
         public GameObject[] m_EVAPrefab;            // Reference to the prefabs the players will control.
         public EVAManager[] m_EVAS;                 // A collection of managers for enabling and disabling different aspects of the EVAS.
 
@@ -172,7 +173,8 @@ namespace Complete
 
             // Increment the round number and display text showing the players what round it is.
             m_RoundNumber++;
-            m_MessageText.text = "ROUND " + m_RoundNumber;
+            m_MessageText.text = "ROUND: " + m_RoundNumber;
+            m_ImageRound.enabled = true;
 
             // Wait for the specified length of time until yielding control back to the game loop.
             yield return m_StartWait;
@@ -186,6 +188,7 @@ namespace Complete
 
             // Clear the text from the screen.
             m_MessageText.text = string.Empty;
+            m_ImageRound.enabled = false;
 
             // While there is not one tank left...
             while (!OneTankLeft())
