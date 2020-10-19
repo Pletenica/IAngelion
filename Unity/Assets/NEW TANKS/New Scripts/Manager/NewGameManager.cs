@@ -20,6 +20,11 @@ namespace Complete
         public Image m_ImageRound;
         public GameObject[] m_EVAPrefab;            // Reference to the prefabs the players will control.
         public EVAManager[] m_EVAS;                 // A collection of managers for enabling and disabling different aspects of the EVAS.
+        public Image m_AngelWinsRound;
+        public Image m_AsukaWinsRound;
+        public Image m_ShinjiWinsRound;
+        public Image m_ReiWinsRound;
+
 
         private int m_RoundNumber;                  // Which round the game is currently on.
         private WaitForSeconds m_StartWait;         // Used to have a delay whilst the round starts.
@@ -95,13 +100,11 @@ namespace Complete
         {
             //Spawn Angel
             m_EVAS[0].m_Instance = Instantiate(m_EVAPrefab[0], m_EVAS[0].m_SpawnPoint.position, m_EVAS[0].m_SpawnPoint.rotation) as GameObject;
-            m_EVAS[0].m_PlayerNumber = 1;
             m_EVAS[0].m_Instance.name = "Angel Player";
             m_EVAS[0].Setup();
 
             //Spawn EVA
             m_EVAS[WhichEVA].m_Instance = Instantiate(m_EVAPrefab[WhichEVA], m_EVAS[WhichEVA].m_SpawnPoint.position, m_EVAS[WhichEVA].m_SpawnPoint.rotation) as GameObject;
-            m_EVAS[WhichEVA].m_PlayerNumber = 2;
             m_EVAS[WhichEVA].m_Instance.name = "EVA Player";
             m_EVAS[WhichEVA].Setup();
         }
@@ -144,7 +147,7 @@ namespace Complete
             if (m_GameWinner != null)
             {
                 // If there is a game winner, restart the level.
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene("MainMenu");
             }
             else
             {
@@ -166,7 +169,7 @@ namespace Complete
         {
             // As soon as the round starts reset the tanks and make sure they can't move.
             ResetAllTanks();
-            DisableTankControl();
+            DisableEVAControl();
 
             // Snap the camera's zoom and position to something appropriate for the reset tanks.
             m_CameraControl.SetStartPositionAndSize();
@@ -229,7 +232,7 @@ namespace Complete
         private IEnumerator RoundEnding()
         {
             // Stop tanks from moving.
-            DisableTankControl();
+            DisableEVAControl();
 
             // Clear the winner from the previous round.
             m_RoundWinner = null;
@@ -241,7 +244,6 @@ namespace Complete
             if (m_RoundWinner != null)
             {
                 m_RoundWinner.m_Wins++;
-                PlusUIWinnerImage(m_RoundWinner.m_Movement.m_PlayerNumber);
                 m_RoundWinner.PlayDance(1);
             }
 
@@ -335,15 +337,12 @@ namespace Complete
             m_EVAS[WhichEVA].Reset();
         }
 
-
         private void EnableEVAControl()
         {
             m_EVAS[0].EnableControl();
             m_EVAS[WhichEVA].EnableControl();
         }
-
-
-        private void DisableTankControl()
+        private void DisableEVAControl()
         {
             m_EVAS[0].DisableControl();
             m_EVAS[WhichEVA].DisableControl();
