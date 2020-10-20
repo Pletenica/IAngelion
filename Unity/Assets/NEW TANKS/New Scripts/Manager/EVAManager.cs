@@ -85,7 +85,7 @@ namespace Complete
             m_Instance.SetActive(true);
         }
 
-        private void EVASetIAMovement()
+        public void EVASetIAMovement()
         {
             if(m_EVAInfo.WhichIAMovement == 1)
             {

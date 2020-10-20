@@ -131,7 +131,7 @@ MonoBehaviour:
     m_MinLimit: -180
     m_MaxLimit: 180
     m_AimAxis: 2
-    m_MaintainOffset: 0
+    m_MaintainOffset: 1
     m_ConstrainedAxes:
       x: 0
       y: 1
@@ -5800,9 +5800,6 @@ MonoBehaviour:
   m_Shell: {fileID: 5409530, guid: 601907ec05480b24cbd4f37d9990f070, type: 3}
   m_FireTransform: {fileID: 6500638202278575510}
   m_AimSlider: {fileID: 6500638202285345270}
-  m_ShootingAudio: {fileID: 6500638202282202350}
-  m_ChargingClip: {fileID: 8300000, guid: c17f124fcdc0f5446a72f793898bd74b, type: 3}
-  m_FireClip: {fileID: 8300000, guid: 672a9941361ad494a99fba36759eca80, type: 3}
   m_MinLaunchForce: 15
   m_MaxLaunchForce: 30
   m_MaxChargeTime: 0.75
@@ -5819,7 +5816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19806cf7bf2fc0145bdb9b20320a77e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StartingHealth: 100
+  m_StartingHealth: 0
   m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
   m_ExplosionPrefab: {fileID: 151086, guid: e179b929a209d9545a527cfb219ee845, type: 3}
   m_Slider: {fileID: 6500638202285288888}
@@ -5867,10 +5864,6 @@ MonoBehaviour:
   EVAControl: 1
   EVAAnimator: {fileID: 7411667137009656092}
   _navMeshAgent: {fileID: 8504562223147391419}
-  MovementAudio: {fileID: 6500638202282202350}
-  EvaIdleAudio: {fileID: 0}
-  EvaWalkingAudio: {fileID: 0}
-  AttackDistance: 10
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}

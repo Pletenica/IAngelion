@@ -8,6 +8,11 @@ public class ManagerScenes : MonoBehaviour
     [Range(1,3)]
     public int EVAChoose=1;
     public static ManagerScenes instance;
+    [Range(1, 2)]
+    public int AngelChooseMovement=2;
+    [Range(1, 2)]
+    public int EVAChooseMovement=1;
+
 
     private void Awake()
     {
@@ -29,6 +34,16 @@ public class ManagerScenes : MonoBehaviour
     public void ButtonEVAChoose(int _num)
     {
         EVAChoose = _num;
+    }
+
+    public void ButtonEVAChooseMovement(int _num)
+    {
+        EVAChooseMovement = _num;
+    }
+
+    public void ButtonAngelChooseMovement(int _num)
+    {
+        AngelChooseMovement = _num;
     }
 
     public void ChangeToPlayScene()

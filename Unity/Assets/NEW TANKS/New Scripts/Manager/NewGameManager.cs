@@ -10,6 +10,8 @@ namespace Complete
         [Header("GameProperties")]
         public GameObject m_DaddyManager;        //This is the manager that controlles all into scenes.
         private int WhichEVA;
+        private int WhichIAAngel;
+        private int WhichIAEVA;
         public int m_NumRoundsToWin = 5;            // The number of rounds a single player has to win to win the game.
         public float m_StartDelay = 3f;             // The delay between the start of RoundStarting and RoundPlaying phases.
         public float m_EndDelay = 3f;               // The delay between the end of RoundPlaying and RoundEnding phases.
@@ -41,12 +43,28 @@ namespace Complete
         public Image[] m_WinsPlayer1;
         public Image[] m_WinsPlayer2;
 
+        //UI ELEMENTS
+        [Header("Image WIN Round")]
+        public Image m_RoundWinAngelImage;
+        public Image m_RoundWinReiImage;
+        public Image m_RoundWinShinjiImage;
+        public Image m_RoundWinAsukaImage;
+
+        [Header("Image WIN Round")]
+        public Image m_GameWinAngelImage;
+        public Image m_GameWinReiImage;
+        public Image m_GameWinShinjiImage;
+        public Image m_GameWinAsukaImage;
+        private int m_WhoWinsRound;
+        private int m_WhoWinsGame;
 
         private void Start()
         {
             FindSceneManager();
             //Init all Wins Image to disable to in future activate one to one depending which player wins the round
             WhichEVA = m_DaddyManager.GetComponent<ManagerScenes>().EVAChoose;
+            WhichIAAngel = m_DaddyManager.GetComponent<ManagerScenes>().AngelChooseMovement;
+            WhichIAEVA = m_DaddyManager.GetComponent<ManagerScenes>().EVAChooseMovement;
             // Create the delays so they only have to be made once.
             m_StartWait = new WaitForSeconds(m_StartDelay);
             m_EndWait = new WaitForSeconds(m_EndDelay);
@@ -57,6 +75,13 @@ namespace Complete
 
             PutUIElmentsWell();
             // Once the tanks have been created and the camera is using them as targets, start the game.
+            m_EVAS[0].m_EVAInfo.WhichIAMovement = WhichIAAngel;
+            m_EVAS[WhichEVA].m_EVAInfo.WhichIAMovement = WhichIAEVA;
+            m_EVAS[0].EVASetIAMovement();
+            m_EVAS[WhichEVA].EVASetIAMovement();
+
+            RoundWinnerImageFunction(m_WhoWinsRound, false);
+            GameWinnerImageFunction(m_WhoWinsRound, false);
 
             StartCoroutine(GameLoop());
         }
@@ -118,14 +143,6 @@ namespace Complete
             targets[0] = m_EVAS[0].m_Instance.transform;
             targets[1] = m_EVAS[WhichEVA].m_Instance.transform;
 
-            // For each of these transforms...
-            //for (int i = 0; i < targets.Length; i++)
-            //{
-            //    // ... set it to the appropriate tank transform.
-            //    targets[i] = m_EVAS[i].m_Instance.transform;
-            //}
-
-            // These are the targets the camera should follow.
             m_CameraControl.m_Targets = targets;
         }
 
@@ -167,6 +184,9 @@ namespace Complete
 
         private IEnumerator RoundStarting()
         {
+            RoundWinnerImageFunction(m_WhoWinsRound, false);
+            GameWinnerImageFunction(m_WhoWinsRound, false);
+
             // As soon as the round starts reset the tanks and make sure they can't move.
             ResetAllTanks();
             DisableEVAControl();
@@ -201,34 +221,6 @@ namespace Complete
             }
         }
 
-        private void PlusUIWinnerImage(int _playernumber)
-        {
-            if (_playernumber == 1)
-            {
-                for (int i = 0; i < m_WinsPlayer1.Length; i++)
-                {
-                    if (m_WinsPlayer1[i].IsActive()) continue;
-                    else
-                    {
-                        m_WinsPlayer1[i].enabled = true;
-                        return;
-                    }
-                }
-            }
-            else if (_playernumber == 2)
-            {
-                for (int i = 0; i < m_WinsPlayer2.Length; i++)
-                {
-                    if (m_WinsPlayer2[i].IsActive()) continue;
-                    else
-                    {
-                        m_WinsPlayer2[i].enabled = true;
-                        return;
-                    }
-                }
-            }
-        }
-
         private IEnumerator RoundEnding()
         {
             // Stop tanks from moving.
@@ -251,8 +243,17 @@ namespace Complete
             m_GameWinner = GetGameWinner();
 
             // Get a message based on the scores and whether or not there is a game winner and display it.
-            string message = EndMessage();
-            m_MessageText.text = message;
+            //string message = EndMessage();
+            //m_MessageText.text = message;
+
+            if (m_GameWinner != null)
+            {
+                GameWinnerImageFunction(m_WhoWinsGame, true);
+            }
+            else
+            {
+                RoundWinnerImageFunction(m_WhoWinsRound, true);
+            }
 
             // Wait for the specified length of time until yielding control back to the game loop.
             yield return m_EndWait;
@@ -280,12 +281,17 @@ namespace Complete
         private EVAManager GetRoundWinner()
         {
             if (m_EVAS[0].m_Instance.activeSelf)
-                  return m_EVAS[0];
+            {
+                m_WhoWinsRound = 0;
+                return m_EVAS[0];
+            }
 
             else if (m_EVAS[WhichEVA].m_Instance.activeSelf)
+            {
+                m_WhoWinsRound = WhichEVA;
                 return m_EVAS[WhichEVA];
+            }
 
-            // If none of the tanks are active it is a draw so return null.
             return null;
         }
 
@@ -295,40 +301,18 @@ namespace Complete
         {
 
             if (m_EVAS[0].m_Wins == m_NumRoundsToWin)
+            {
+                m_WhoWinsGame = 0;
                 return m_EVAS[0];
+            }
             else if (m_EVAS[WhichEVA].m_Wins == m_NumRoundsToWin)
+            {
+                m_WhoWinsGame = WhichEVA;
                 return m_EVAS[WhichEVA];
+            }
 
-            // If no tanks have enough rounds to win, return null.
             return null;
         }
-
-
-        // Returns a string message to display at the end of each round.
-        private string EndMessage()
-        {
-            // By default when a round ends there are no winners so the default end message is a draw.
-            string message = "DRAW!";
-
-            // If there is a winner then change the message to reflect that.
-            if (m_RoundWinner != null)
-                message = m_RoundWinner.m_ColoredPlayerText + " WINS THE ROUND!";
-
-            // Add some line breaks after the initial message.
-            message += "\n\n\n\n";
-
-            // Go through all the tanks and add each of their scores to the message.
-            message += m_EVAS[0].m_ColoredPlayerText + ": " + m_EVAS[0].m_Wins + " WINS\n";
-            message += m_EVAS[WhichEVA].m_ColoredPlayerText + ": " + m_EVAS[WhichEVA].m_Wins + " WINS\n";
-
-
-            // If there is a game winner, change the entire message to reflect that.
-            if (m_GameWinner != null)
-                message = m_GameWinner.m_ColoredPlayerText + " WINS THE GAME!";
-
-            return message;
-        }
-
 
         // This function is used to turn all the tanks back on and reset their positions and properties.
         private void ResetAllTanks()
@@ -346,6 +330,60 @@ namespace Complete
         {
             m_EVAS[0].DisableControl();
             m_EVAS[WhichEVA].DisableControl();
+        }
+
+        private void RoundWinnerImageFunction(int _whowins, bool activate)
+        {
+            m_RoundWinAngelImage.enabled = false;
+            m_RoundWinReiImage.enabled = false;
+            m_RoundWinShinjiImage.enabled = false;
+            m_RoundWinAsukaImage.enabled = false;
+
+            if (activate)
+            {
+                switch (_whowins)
+                {
+                    case (0):
+                        m_RoundWinAngelImage.enabled = true;
+                        break;
+                    case (1):
+                        m_RoundWinReiImage.enabled = true;
+                        break;
+                    case (2):
+                        m_RoundWinShinjiImage.enabled = true;
+                        break;
+                    case (3):
+                        m_RoundWinAsukaImage.enabled = true;
+                        break;
+                }
+            }
+        }
+
+        private void GameWinnerImageFunction(int _whowins, bool activate)
+        {
+            m_GameWinAngelImage.enabled = false;
+            m_GameWinReiImage.enabled = false;
+            m_GameWinShinjiImage.enabled = false;
+            m_GameWinAsukaImage.enabled = false;
+
+            if (activate)
+            {
+                switch (_whowins)
+                {
+                    case (0):
+                        m_GameWinAngelImage.enabled = true;
+                        break;
+                    case (1):
+                        m_GameWinReiImage.enabled = true;
+                        break;
+                    case (2):
+                        m_GameWinShinjiImage.enabled = true;
+                        break;
+                    case (3):
+                        m_GameWinAsukaImage.enabled = true;
+                        break;
+                }
+            }
         }
     }
 }
