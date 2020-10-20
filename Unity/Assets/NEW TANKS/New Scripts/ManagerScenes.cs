@@ -48,6 +48,6 @@ public class ManagerScenes : MonoBehaviour
 
     public void ChangeToPlayScene()
     {
-        SceneManager.LoadScene("MainPlayGame");
+        SceneManager.LoadScene("DialogueScene");
     }
 }

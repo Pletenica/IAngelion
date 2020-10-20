@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/CharacterSelection.unity
     guid: ffa5faf247c4e034ea00f5f98594408d
   - enabled: 1
+    path: Assets/DialogueScene.unity
+    guid: fd08bee13dd01e743881bb52030c8de5
+  - enabled: 1
     path: Assets/MainPlayGame.unity
     guid: 37961ba4d27bd46428d20c2ffe403dc3
   m_configObjects: {}
