@@ -1602,12 +1602,12 @@ PrefabInstance:
     - target: {fileID: 7578352564232125459, guid: 13b2d801eb99d524bbdcf111c6f7d8c3,
         type: 3}
       propertyPath: AngelChooseMovement
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7578352564232125459, guid: 13b2d801eb99d524bbdcf111c6f7d8c3,
         type: 3}
       propertyPath: EVAChooseMovement
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13b2d801eb99d524bbdcf111c6f7d8c3, type: 3}

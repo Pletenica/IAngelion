@@ -1,72 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class WanderMovement : MonoBehaviour
 {
-    public float moveSpeed = 3f;
-    public float rotSpeed = 100f;
+    public bool EVAControl = true;
 
-    private bool isWandering = false;
-    private bool isRotatingLeft = false;
-    private bool isRotatingRight = false;
-    private bool isWalking = false;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Animator EVAAnimator;
+    public NavMeshAgent _navMeshAgent;
+    [Range(3, 25)]
+    public float maxWanderTimer = 7.0f;
+    private float _actualTimer;
+    [Range(7, 30)]
+    public float wanderRange = 15;
 
     // Update is called once per frame
     void Update()
     {
-        if(isWandering == false)
+        //Timer functionallity
+        _actualTimer += Time.deltaTime;
+
+        //If timer is greater than maxtimer put another destination and reset timer.
+        if (_actualTimer >= maxWanderTimer)
         {
-            StartCoroutine(Wander());
+            Vector3 newPos = Wander(transform.position, wanderRange);
+            _navMeshAgent.SetDestination(newPos);
+            _actualTimer = 0;
         }
-        if (isRotatingRight == true)
+
+        //Put Animation Well
+        if (_navMeshAgent.hasPath == false)
         {
-            transform.Rotate(transform.up * Time.deltaTime * moveSpeed);
+            EVAAnimator.SetBool("isRunning", false);
         }
-        if (isRotatingLeft == true)
+        else if (_navMeshAgent.hasPath == true)
         {
-            transform.Rotate(transform.up * Time.deltaTime * -moveSpeed);
-        }
-        if (isWalking == true)
-        {
-            transform.position += transform.forward * moveSpeed * Time.deltaTime;
+            EVAAnimator.SetBool("isRunning", true);
         }
     }
 
-
-    IEnumerator Wander()
+    public Vector3 Wander(Vector3 _actualPosition, float _wanderRange)
     {
-        int rotTime = Random.Range(1, 3);
-        int rotateWait = Random.Range(1, 3);
-        int rotateLorR = Random.Range(1, 3);
-        int walkWait = Random.Range(1, 3);
-        int walkTime = Random.Range(1, 3);
+        Vector3 randDirection = Random.insideUnitSphere * _wanderRange;
+        randDirection += _actualPosition;
 
-        isWandering = true;
+        NavMeshHit navHit;
+        NavMesh.SamplePosition(randDirection, out navHit, _wanderRange, NavMesh.AllAreas);
 
-        yield return new WaitForSeconds(walkWait);
-        isWalking = true;
-        yield return new WaitForSeconds(walkTime);
-        isWalking = false;
-        yield return new WaitForSeconds(rotateWait);
-        if(rotateLorR == 1)
-        {
-            isRotatingRight = true;
-            yield return new WaitForSeconds(rotTime);
-            isRotatingRight = false;
-        }
-        if (rotateLorR == 2)
-        {
-            isRotatingLeft = true;
-            yield return new WaitForSeconds(rotTime);
-            isRotatingLeft = false;
-        }
+        return navHit.position;
     }
 }

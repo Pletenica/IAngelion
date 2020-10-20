@@ -5617,8 +5617,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6be643cd898bbc448ce208f76c6cc77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  rotSpeed: 100
+  EVAControl: 1
+  EVAAnimator: {fileID: 5213790115160763380}
+  _navMeshAgent: {fileID: 3237710976747532959}
 --- !u!195 &3237710976747532959
 NavMeshAgent:
   m_ObjectHideFlags: 0

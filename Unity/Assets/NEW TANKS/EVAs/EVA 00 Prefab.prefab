@@ -5801,8 +5801,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6be643cd898bbc448ce208f76c6cc77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  rotSpeed: 100
+  EVAControl: 1
+  EVAAnimator: {fileID: 5848042579948389887}
+  _navMeshAgent: {fileID: 4092569476224177182}
 --- !u!1 &6500638202278360514
 GameObject:
   m_ObjectHideFlags: 0

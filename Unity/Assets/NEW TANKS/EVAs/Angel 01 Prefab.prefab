@@ -5816,7 +5816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19806cf7bf2fc0145bdb9b20320a77e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StartingHealth: 0
+  m_StartingHealth: 100
   m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
   m_ExplosionPrefab: {fileID: 151086, guid: e179b929a209d9545a527cfb219ee845, type: 3}
   m_Slider: {fileID: 6500638202285288888}
@@ -5847,8 +5847,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6be643cd898bbc448ce208f76c6cc77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  rotSpeed: 100
+  EVAControl: 1
+  EVAAnimator: {fileID: 7411667137009656092}
+  _navMeshAgent: {fileID: 8504562223147391419}
+  maxWanderTimer: 7
+  wanderRange: 15
 --- !u!114 &3718268476854167682
 MonoBehaviour:
   m_ObjectHideFlags: 0
