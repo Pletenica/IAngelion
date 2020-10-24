@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class ManagerScenes : MonoBehaviour
 {
     [Range(1,3)]
@@ -33,7 +34,7 @@ public class ManagerScenes : MonoBehaviour
 
     public void ButtonEVAChoose(int _num)
     {
-        EVAChoose = _num;
+        EVAChoose = _num++;
     }
 
     public void ButtonEVAChooseMovement(int _num)

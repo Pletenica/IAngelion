@@ -1,18 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterSelection : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Button previousButton;
+    [SerializeField] private Button nextButton;
+    private int currentCar;
+
+    private void Awake()
     {
-        
+        SelectCar(0);
+    }
+    private void SelectCar(int _index)
+    {
+        previousButton.interactable = (_index != 0);
+        nextButton.interactable = (_index != transform.childCount-1);
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(i == _index);
+            
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeCar(int _change)
     {
-        
+        currentCar += _change;
+        SelectCar(currentCar);
     }
 }
