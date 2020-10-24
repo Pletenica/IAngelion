@@ -5695,11 +5695,10 @@ MonoBehaviour:
   m_PlayerNumber: 1
   m_Shell: {fileID: 5409530, guid: 601907ec05480b24cbd4f37d9990f070, type: 3}
   m_FireTransform: {fileID: 6500638202278575510}
-  m_AimSlider: {fileID: 6500638202285345270}
-  m_MinLaunchForce: 15
-  m_MaxLaunchForce: 30
-  m_MaxChargeTime: 0.75
   EVAAnimator: {fileID: 5848042579948389887}
+  target: {fileID: 8242930079659429899}
+  head: {fileID: 336904957747116691}
+  v: 30
 --- !u!114 &6318267608695385200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5804,6 +5803,8 @@ MonoBehaviour:
   EVAControl: 1
   EVAAnimator: {fileID: 5848042579948389887}
   _navMeshAgent: {fileID: 4092569476224177182}
+  maxWanderTimer: 7
+  wanderRange: 15
 --- !u!1 &6500638202278360514
 GameObject:
   m_ObjectHideFlags: 0
@@ -12151,6 +12152,12 @@ Transform:
 --- !u!4 &874187591762760048 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -650382798008282385, guid: 7abcaf43914161444afec695acfbdcfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 8852067721146516383}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &336904957747116691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9111962883125049612, guid: 7abcaf43914161444afec695acfbdcfe,
     type: 3}
   m_PrefabInstance: {fileID: 8852067721146516383}
   m_PrefabAsset: {fileID: 0}
