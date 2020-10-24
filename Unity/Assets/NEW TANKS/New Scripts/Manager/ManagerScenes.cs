@@ -50,4 +50,28 @@ public class ManagerScenes : MonoBehaviour
     {
         SceneManager.LoadScene("DialogueScene");
     }
+
+    public void EvaSum()
+    {
+        if (EVAChoose == 3)
+        {
+            EVAChoose = 1;
+        }
+        else
+        {
+            EVAChoose++;
+        }
+    }
+
+    public void EvaRest()
+    {
+        if (EVAChoose == 1)
+        {
+            EVAChoose = 3;
+        }
+        else
+        {
+            EVAChoose--;
+        }
+    }
 }
