@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44504893, g: 0.49464077, b: 0.5737384, a: 1}
+  m_IndirectSpecularColor: {r: 0.44504905, g: 0.49464136, b: 0.5737399, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -1263,34 +1263,74 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 301315669, guid: cc010c9c8bacfc74eb63d2e579c89206, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f30f07570bf1c8443bca8a5092026bdb,
+        type: 3}
     - target: {fileID: 505456363, guid: cc010c9c8bacfc74eb63d2e579c89206, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 505456366, guid: cc010c9c8bacfc74eb63d2e579c89206, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8c707a9ab39967040a134614e9494b27,
+        type: 3}
     - target: {fileID: 515845908, guid: cc010c9c8bacfc74eb63d2e579c89206, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 515845911, guid: cc010c9c8bacfc74eb63d2e579c89206, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f30f07570bf1c8443bca8a5092026bdb,
+        type: 3}
     - target: {fileID: 691129950, guid: cc010c9c8bacfc74eb63d2e579c89206, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 691129953, guid: cc010c9c8bacfc74eb63d2e579c89206, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9514a617cadba13458c915115deb9fa6,
+        type: 3}
     - target: {fileID: 878661863, guid: cc010c9c8bacfc74eb63d2e579c89206, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 878661864, guid: cc010c9c8bacfc74eb63d2e579c89206, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f7627b5cbbe6840439de0f3759f07163,
+        type: 3}
     - target: {fileID: 1015559636, guid: cc010c9c8bacfc74eb63d2e579c89206, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1015559639, guid: cc010c9c8bacfc74eb63d2e579c89206, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a7d60deac74e9324da29084c9d8e59a1,
+        type: 3}
     - target: {fileID: 1052685636, guid: cc010c9c8bacfc74eb63d2e579c89206, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1052685639, guid: cc010c9c8bacfc74eb63d2e579c89206, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b717521d5dee09446bc171ae0c13e266,
+        type: 3}
     - target: {fileID: 1158173549, guid: cc010c9c8bacfc74eb63d2e579c89206, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1158173552, guid: cc010c9c8bacfc74eb63d2e579c89206, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f30f07570bf1c8443bca8a5092026bdb,
+        type: 3}
     - target: {fileID: 2573566748235797416, guid: cc010c9c8bacfc74eb63d2e579c89206,
         type: 3}
       propertyPath: m_LocalPosition.x
