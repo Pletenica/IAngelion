@@ -9,18 +9,18 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/StartMenu.unity
+    path: Assets/Assignment 1/Scenes/StartMenu.unity
     guid: 79b7ccb46a0f5f24b8c20b7138ce3e8e
   - enabled: 1
-    path: Assets/MainMenu.unity
+    path: Assets/Assignment 1/Scenes/MainMenu.unity
     guid: aba70aec095b6cc4c8d99aba6630ee85
   - enabled: 1
-    path: Assets/CharacterSelection.unity
+    path: Assets/Assignment 1/Scenes/CharacterSelection.unity
     guid: ffa5faf247c4e034ea00f5f98594408d
   - enabled: 1
-    path: Assets/DialogueScene.unity
+    path: Assets/Assignment 1/Scenes/DialogueScene.unity
     guid: fd08bee13dd01e743881bb52030c8de5
   - enabled: 1
-    path: Assets/MainPlayGame.unity
+    path: Assets/Assignment 1/Scenes/MainPlayGame.unity
     guid: 37961ba4d27bd46428d20c2ffe403dc3
   m_configObjects: {}
