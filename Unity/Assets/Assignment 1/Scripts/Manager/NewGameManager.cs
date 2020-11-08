@@ -43,6 +43,11 @@ namespace Complete
         public Image[] m_WinsPlayer1;
         public Image[] m_WinsPlayer2;
 
+        public Text countPlayer1Bullets;
+        public Text totalPlayer1Bullets;
+        public Text countPlayer2Bullets;
+        public Text totalPlayer2Bullets;
+
         //UI ELEMENTS
         [Header("Image WIN Round")]
         public Image m_RoundWinAngelImage;
@@ -70,6 +75,7 @@ namespace Complete
             m_EndWait = new WaitForSeconds(m_EndDelay);
 
             SpawnAllEVAS();
+            PutSwpawnPointsValueInPatrol();
             InitWinImageUI(m_EVAS[0], 0);
             InitWinImageUI(m_EVAS[WhichEVA], 0);
             SetCameraTargets();
@@ -85,6 +91,15 @@ namespace Complete
             GameWinnerImageFunction(m_WhoWinsRound, false);
 
             StartCoroutine(GameLoop());
+        }
+
+        private void PutSwpawnPointsValueInPatrol()
+        {
+            PatrolMovement _eva = m_EVAS[0].m_Instance.GetComponent<PatrolMovement>();
+            _eva._spawnPoint = m_EVAS[0].m_SpawnPoint;
+
+            PatrolMovement _angel = m_EVAS[WhichEVA].m_Instance.GetComponent<PatrolMovement>();
+            _angel._spawnPoint = m_EVAS[WhichEVA].m_SpawnPoint;
         }
 
         private void FindSceneManager()
@@ -155,6 +170,20 @@ namespace Complete
             m_CameraControl.m_Targets = targets;
         }
 
+        private void Update()
+        {
+            UpdateBulletsUI();
+        }
+        public void UpdateBulletsUI()
+        {
+            EVAShooting evas = m_EVAS[0].m_Instance.GetComponent<EVAShooting>();
+            EVAShooting angels = m_EVAS[WhichEVA].m_Instance.GetComponent<EVAShooting>();
+
+            countPlayer1Bullets.text = evas.countBullets.ToString();
+            totalPlayer1Bullets.text = evas.m_TotalBullets.ToString();
+            countPlayer2Bullets.text = angels.countBullets.ToString();
+            totalPlayer2Bullets.text = angels.m_TotalBullets.ToString();
+        }
 
         // This is called from start and will run each phase of the game one after another.
         private IEnumerator GameLoop()

@@ -16,5 +16,6 @@ public class EVAInfo : MonoBehaviour
     [Tooltip("1 is Patrol & 2 is Wander")]
     [Range(1,2)]
     public int WhichIAMovement = 1;
+    public Transform _spawnPosition;
     
 }

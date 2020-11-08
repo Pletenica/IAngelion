@@ -5782,6 +5782,7 @@ MonoBehaviour:
   EVAColor: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
   WinImage: {fileID: 708167375355309804, guid: 71c6da32867a31245a10a6329a04bd71, type: 3}
   WhichIAMovement: 2
+  _spawnPosition: {fileID: 0}
 --- !u!114 &6778691768688365407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5795,6 +5796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerNumber: 1
+  m_TotalBullets: 15
   m_Shell: {fileID: 5409530, guid: 601907ec05480b24cbd4f37d9990f070, type: 3}
   m_FireTransform: {fileID: 6500638202278575510}
   EVAAnimator: {fileID: 7411667137009656092}
@@ -5871,6 +5873,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  _spawnPoint: {fileID: 0}
 --- !u!195 &8504562223147391419
 NavMeshAgent:
   m_ObjectHideFlags: 0

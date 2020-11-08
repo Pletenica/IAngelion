@@ -50,4 +50,9 @@ public class WanderMovement : MonoBehaviour
 
         return navHit.position;
     }
+
+    public void PutNewWanderPoint(Transform _tra)
+    {
+        _navMeshAgent.destination = _tra.position;
+    }
 }
