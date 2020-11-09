@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-
     public class EVAShooting : MonoBehaviour
     {
         public int m_PlayerNumber = 1;
@@ -13,8 +12,9 @@ using UnityEngine.UI;
         public Rigidbody m_Shell;
         public Transform m_FireTransform;
         public Animator EVAAnimator;
+    public Transform _spawnPoint;
 
-        public GameObject target;
+    public GameObject target;
         public GameObject head;
 
         float cTime = 0.0f;
@@ -39,28 +39,28 @@ using UnityEngine.UI;
         {
             m_FireTransform.transform.position = head.transform.position + m_FireTransform.forward; 
             m_FireTransform.transform.LookAt(target.transform.position);
-
-            if (!canShot)
-            {
-                cTime += Time.deltaTime;
-                if (cTime >= shotDelay)
-                {
-                    canShot = true;
-                    cTime = 0.0f;
-                }
-
-            }
-
-            if (canShot)
-            {
-                Fire();
-                canShot = false;
-            }
-
-            if (EVAAnimator != null) EVAAnimator.SetBool("isAttacking", false);
+            //
+            //if (!canShot)
+            //{
+            //    cTime += Time.deltaTime;
+            //    if (cTime >= shotDelay)
+            //    {
+            //        canShot = true;
+            //        cTime = 0.0f;
+            //    }
+            //
+            //}
+            //
+            //if (canShot)
+            //{
+            //    Fire();
+            //    canShot = false;
+            //}
+            //
+            //if (EVAAnimator != null) EVAAnimator.SetBool("isAttacking", false);
         }
 
-        private void Fire()
+        public void Fire()
         {
             if (countBullets>=1)
             {
@@ -76,21 +76,6 @@ using UnityEngine.UI;
                 shellInstance.velocity = v * m_FireTransform.forward;
 
                 countBullets--;
-            }
-            else
-            {
-                if (_patrolMovement.enabled)
-                {
-                    _patrolMovement.PutSpawnPointDestination();
-                }
-                else if (_wanderMovement.enabled)
-                {
-                    _wanderMovement.PutNewWanderPoint(_patrolMovement._spawnPoint);
-                    if (!_wanderMovement._navMeshAgent.pathPending && _wanderMovement._navMeshAgent.remainingDistance < 0.5f)
-                    {
-                    RechargeBullets();
-                    }
-                }
             }
         }
     }

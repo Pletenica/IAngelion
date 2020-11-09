@@ -19,25 +19,25 @@ public class WanderMovement : MonoBehaviour
     void Update()
     {
         //Timer functionallity
-        _actualTimer += Time.deltaTime;
-
-        //If timer is greater than maxtimer put another destination and reset timer.
-        if (_actualTimer >= maxWanderTimer)
-        {
-            Vector3 newPos = Wander(transform.position, wanderRange);
-            _navMeshAgent.SetDestination(newPos);
-            _actualTimer = 0;
-        }
-
-        //Put Animation Well
-        if (_navMeshAgent.hasPath == false)
-        {
-            EVAAnimator.SetBool("isRunning", false);
-        }
-        else if (_navMeshAgent.hasPath == true)
-        {
-            EVAAnimator.SetBool("isRunning", true);
-        }
+       // _actualTimer += Time.deltaTime;
+       //
+       // //If timer is greater than maxtimer put another destination and reset timer.
+       // if (_actualTimer >= maxWanderTimer)
+       // {
+       //     Vector3 newPos = Wander(transform.position, wanderRange);
+       //     _navMeshAgent.SetDestination(newPos);
+       //     _actualTimer = 0;
+       // }
+       //
+       // //Put Animation Well
+       // if (_navMeshAgent.hasPath == false)
+       // {
+       //     EVAAnimator.SetBool("isRunning", false);
+       // }
+       // else if (_navMeshAgent.hasPath == true)
+       // {
+       //     EVAAnimator.SetBool("isRunning", true);
+       // }
     }
 
     public Vector3 Wander(Vector3 _actualPosition, float _wanderRange)

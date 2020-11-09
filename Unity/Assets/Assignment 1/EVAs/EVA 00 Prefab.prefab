@@ -5424,6 +5424,7 @@ GameObject:
   - component: {fileID: 4092569476224177182}
   - component: {fileID: 3471565706088864113}
   - component: {fileID: 65603073515793496}
+  - component: {fileID: 4574169545316397482}
   m_Layer: 10
   m_Name: EVA 00 Prefab
   m_TagString: Untagged
@@ -5677,7 +5678,9 @@ MonoBehaviour:
   EVAColor: {r: 0.8396226, g: 0.5690295, b: 0.23366857, a: 1}
   WinImage: {fileID: -5105819029347269749, guid: 71c6da32867a31245a10a6329a04bd71,
     type: 3}
+  isWandering: 0
   WhichIAMovement: 1
+  _spawnPosition: {fileID: 0}
 --- !u!114 &6778691768688365407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5691,9 +5694,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerNumber: 1
+  m_TotalBullets: 10
+  countBullets: 0
   m_Shell: {fileID: 5409530, guid: 601907ec05480b24cbd4f37d9990f070, type: 3}
   m_FireTransform: {fileID: 6500638202278575510}
   EVAAnimator: {fileID: 5848042579948389887}
+  _spawnPoint: {fileID: 0}
   target: {fileID: 8242930079659429899}
   head: {fileID: 336904957747116691}
   v: 30
@@ -5803,6 +5809,76 @@ MonoBehaviour:
   _navMeshAgent: {fileID: 4092569476224177182}
   maxWanderTimer: 7
   wanderRange: 15
+--- !u!114 &4574169545316397482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500638202278313572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 422fb6956201c7944ae2113a1a53b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTasksPerTick: 500
+  behavior: {fileID: 11400000, guid: ec0995efa3b73414e80de817af9b71a2, type: 2}
+  paused: 0
+  restartWhenFinished: 0
+  blackboard:
+    intParams: 
+    intParamsNames: []
+    intParamsLostDefaultValue: 
+    boolParams: 
+    boolParamsNames: []
+    boolParamsLostDefaultValue: 
+    floatParams: []
+    floatParamsNames: []
+    floatParamsLostDefaultValue: 
+    stringParams: []
+    stringParamsNames: []
+    stringParamsLostDefaultValue: 
+    colorParams: []
+    colorParamsNames: []
+    colorParamsLostDefaultValue: 
+    objectParams:
+    - {fileID: 1698249734788850982, guid: 793350f4c35388e4a8ea6aa663fbbee9, type: 3}
+    - {fileID: 6500638202278313572}
+    - {fileID: 5848042579948389887}
+    objectParamsNames:
+    - wanderArea
+    - game object
+    - animator
+    objectParamsLostDefaultValue: 
+    layerMaskParams: []
+    layerMaskParamsNames: []
+    layerMaskParamsLostDefaultValue: 
+    enumParamsNames: []
+    enumParamsLostDefaultValue: 
+    vector2Params: []
+    vector2ParamsNames: []
+    vector2ParamsLostDefaultValue: 
+    vector3Params: []
+    vector3ParamsNames: []
+    vector3ParamsLostDefaultValue: 
+    vector4Params: []
+    vector4ParamsNames: []
+    vector4ParamsLostDefaultValue: 
+    rectParams: []
+    rectParamsNames: []
+    rectParamsLostDefaultValue: 
+    animationCurveParams: []
+    animationCurveParamsNames: []
+    animationCurveParamsLostDefaultValue: 
+    boundsParams: []
+    boundsParamsNames: []
+    boundsParamsLostDefaultValue: 
+    gradientParams: []
+    gradientParamsNames: []
+    gradientParamsLostDefaultValue: 
+    quaternionParams: []
+    quaternionParamsNames: []
+    quaternionParamsLostDefaultValue: 
 --- !u!1 &6500638202278360514
 GameObject:
   m_ObjectHideFlags: 0

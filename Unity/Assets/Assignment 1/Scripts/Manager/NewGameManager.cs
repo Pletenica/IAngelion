@@ -81,24 +81,34 @@ namespace Complete
             SetCameraTargets();
 
             PutUIElmentsWell();
+
             // Once the tanks have been created and the camera is using them as targets, start the game.
             m_EVAS[0].m_EVAInfo.WhichIAMovement = WhichIAAngel;
             m_EVAS[WhichEVA].m_EVAInfo.WhichIAMovement = WhichIAEVA;
             m_EVAS[0].EVASetIAMovement();
             m_EVAS[WhichEVA].EVASetIAMovement();
 
+            PutBoolsIA();
             RoundWinnerImageFunction(m_WhoWinsRound, false);
             GameWinnerImageFunction(m_WhoWinsRound, false);
 
             StartCoroutine(GameLoop());
         }
 
+        private void PutBoolsIA()
+        {
+            if (WhichIAEVA == 1) m_EVAS[0].m_EVAInfo.isWandering = true;
+            if (WhichIAEVA == 2) m_EVAS[0].m_EVAInfo.isWandering = false;
+
+            if (WhichIAAngel == 1) m_EVAS[WhichEVA].m_EVAInfo.isWandering = true;
+            if (WhichIAAngel == 2) m_EVAS[WhichEVA].m_EVAInfo.isWandering = false;
+        }
         private void PutSwpawnPointsValueInPatrol()
         {
-            PatrolMovement _eva = m_EVAS[0].m_Instance.GetComponent<PatrolMovement>();
+            EVAShooting _eva = m_EVAS[0].m_Instance.GetComponent<EVAShooting>();
             _eva._spawnPoint = m_EVAS[0].m_SpawnPoint;
 
-            PatrolMovement _angel = m_EVAS[WhichEVA].m_Instance.GetComponent<PatrolMovement>();
+            EVAShooting _angel = m_EVAS[WhichEVA].m_Instance.GetComponent<EVAShooting>();
             _angel._spawnPoint = m_EVAS[WhichEVA].m_SpawnPoint;
         }
 

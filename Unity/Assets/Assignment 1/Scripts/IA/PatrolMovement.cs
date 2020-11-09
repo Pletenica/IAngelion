@@ -8,9 +8,7 @@ public class PatrolMovement : MonoBehaviour
     public bool EVAControl = true;
     public Animator EVAAnimator;
     public NavMeshAgent _navMeshAgent;
-    bool gotoSpawn=false;
     public Transform[] patrolPoints;
-    public Transform _spawnPoint;
     public WaitForSeconds rechargeseconds;
 
     private int currentPatrolPoint = 0;
@@ -26,29 +24,21 @@ public class PatrolMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_navMeshAgent.enabled == true && EVAControl == true)
-        {
-            _navMeshAgent.isStopped = false;
-            if (!_navMeshAgent.pathPending && _navMeshAgent.remainingDistance < 0.5f)
-            {
-                if (gotoSpawn == false)
-                {
-                    MoveToNextPatrolPoint();
-                    if(evaShooting.countBullets==0) evaShooting.RechargeBullets();
-                }
-                else
-                {
-                    _navMeshAgent.destination = _spawnPoint.position;
-                    gotoSpawn = false;
-                }
-            }
-            EVAAnimator.SetBool("isRunning", true);
-        }
-        if (EVAControl == false)
-        {
-            EVAAnimator.SetBool("isRunning", false);
-            _navMeshAgent.isStopped=true;
-        }
+        //if (_navMeshAgent.enabled == true && EVAControl == true)
+        //{
+        //    _navMeshAgent.isStopped = false;
+        //    if (!_navMeshAgent.pathPending && _navMeshAgent.remainingDistance < 0.5f)
+        //    {
+        //        MoveToNextPatrolPoint();
+        //        if(evaShooting.countBullets==0) evaShooting.RechargeBullets();
+        //    }
+        //    EVAAnimator.SetBool("isRunning", true);
+        //}
+        //if (EVAControl == false)
+        //{
+        //    EVAAnimator.SetBool("isRunning", false);
+        //    _navMeshAgent.isStopped=true;
+        //}
     }
 
     public void MoveToNextPatrolPoint()
@@ -62,7 +52,7 @@ public class PatrolMovement : MonoBehaviour
         }
     }
 
-    void PutWellPatrolPoints()
+    public void PutWellPatrolPoints()
     {
         patrolPoints[0] = GameObject.Find("Patrol 1").transform;
         patrolPoints[1] = GameObject.Find("Patrol 2").transform;
@@ -70,11 +60,5 @@ public class PatrolMovement : MonoBehaviour
         patrolPoints[3] = GameObject.Find("Patrol 4").transform;
         patrolPoints[4] = GameObject.Find("Patrol 5").transform;
         patrolPoints[5] = GameObject.Find("Patrol 6").transform;
-    }
-
-    public void PutSpawnPointDestination()
-    {
-        gotoSpawn = true;
-        currentPatrolPoint = 0;
     }
 }
