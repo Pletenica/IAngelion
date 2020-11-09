@@ -18,8 +18,7 @@ namespace Complete
         [HideInInspector] public int m_Wins;                    // The number of wins this player has so far.
         [HideInInspector] public EVAInfo m_EVAInfo;                              //Collects all Eva info
 
-        [HideInInspector] public WanderMovement m_WanderMovement;
-        [HideInInspector] public PatrolMovement m_PatrolMovement;                        // Reference to tank's movement script, used to disable and enable control.
+        [HideInInspector] public EVAMovement m_EVAMovement;                      // Reference to tank's movement script, used to disable and enable control.
         private EVAShooting m_Shooting;                        // Reference to tank's shooting script, used to disable and enable control.
         private EVADances m_Dances;                        // Reference to tank's shooting script, used to disable and enable control.
         private GameObject m_CanvasGameObject;                  // Used to disable the world space UI during the Starting and Ending phases of each round.
@@ -28,16 +27,13 @@ namespace Complete
         public void Setup()
         {
             // Get references to the components.
-            m_PatrolMovement = m_Instance.GetComponent<PatrolMovement>();
-            m_WanderMovement = m_Instance.GetComponent<WanderMovement>();
+            m_EVAMovement = m_Instance.GetComponent<EVAMovement>();
             m_Shooting = m_Instance.GetComponent<EVAShooting>();
             m_Dances = m_Instance.GetComponent<EVADances>();
             m_EVAInfo = m_Instance.GetComponent<EVAInfo>();
             m_PlayerColor = m_EVAInfo.EVAColor;
             m_CanvasGameObject = m_Instance.GetComponentInChildren<Canvas>().gameObject;
 
-
-            EVASetIAMovement();
             // Get all of the renderers of the tank.
             MeshRenderer[] renderers = m_Instance.GetComponentsInChildren<MeshRenderer>();
 
@@ -57,8 +53,6 @@ namespace Complete
         // Used during the phases of the game where the player shouldn't be able to control their tank.
         public void DisableControl()
         {
-            m_PatrolMovement.enabled = false;
-            m_WanderMovement.enabled = false;
             m_Shooting.enabled = false;
 
             m_CanvasGameObject.SetActive(false);
@@ -68,7 +62,6 @@ namespace Complete
         // Used during the phases of the game where the player should be able to control their tank.
         public void EnableControl()
         {
-            EVASetIAMovement();
             m_Shooting.enabled = true;
 
             m_CanvasGameObject.SetActive(true);
@@ -83,20 +76,6 @@ namespace Complete
 
             m_Instance.SetActive(false);
             m_Instance.SetActive(true);
-        }
-
-        public void EVASetIAMovement()
-        {
-            if(m_EVAInfo.WhichIAMovement == 1)
-            {
-                m_Instance.GetComponent<PatrolMovement>().enabled = true;
-                m_Instance.GetComponent<WanderMovement>().enabled = false;
-            }
-            if (m_EVAInfo.WhichIAMovement == 2)
-            {
-                m_Instance.GetComponent<PatrolMovement>().enabled = false;
-                m_Instance.GetComponent<WanderMovement>().enabled = true;
-            }
         }
     }
 }

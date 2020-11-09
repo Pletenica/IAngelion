@@ -14,9 +14,9 @@ public class IsEVAinPath : ConditionBase
     public override bool Check()
     {
         bool ret = false;
-        PatrolMovement patrolMovement = targetGameobject.GetComponent<PatrolMovement>();
+        EVAMovement evaMovement = targetGameobject.GetComponent<EVAMovement>();
 
-        if (!patrolMovement._navMeshAgent.pathPending && patrolMovement._navMeshAgent.remainingDistance < 0.5f)
+        if (!evaMovement._navMeshAgent.pathPending && evaMovement._navMeshAgent.remainingDistance < 0.5f)
         {
             ret = true;
         }

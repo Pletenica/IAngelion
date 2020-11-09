@@ -122,7 +122,7 @@ MonoBehaviour:
     description=\"\" cardinality=\"-1\" hasParent=\"False\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <SubbehaviorNode id=\"7\" />\r\n        </data>\r\n     
     </_data>\r\n    </SubbehaviorNode>\r\n  </editorInfo>\r\n</BehaviorBricks>"
-  zoom: 0.9
+  zoom: 0.6
   subslist:
   - {fileID: 11400000, guid: 6fb97ac63415000419ae0abc3307c27b, type: 2}
   - {fileID: 11400000, guid: 7909f92894141ba48b4170a625bb0d8e, type: 2}

@@ -7,8 +7,6 @@ using UnityEngine.UI;
         [Range(1, 40)]
         public int m_TotalBullets = 10;
         public int countBullets;
-        private PatrolMovement _patrolMovement;
-        private WanderMovement _wanderMovement;
         public Rigidbody m_Shell;
         public Transform m_FireTransform;
         public Animator EVAAnimator;
@@ -26,8 +24,6 @@ using UnityEngine.UI;
         private void Start()
         {
             countBullets = m_TotalBullets;
-            _patrolMovement = GetComponent<PatrolMovement>();
-            _wanderMovement = GetComponent<WanderMovement>();
         }
     public void RechargeBullets()
     {

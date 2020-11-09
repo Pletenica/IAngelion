@@ -14,6 +14,7 @@ public class SetIdleAnim : BasePrimitiveAction
     public override TaskStatus OnUpdate()
     {
         targetAnimator.SetBool("isRunning", false);
+        targetAnimator.SetBool("isAttacking", false);
 
         return TaskStatus.COMPLETED;
     }

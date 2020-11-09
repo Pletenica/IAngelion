@@ -5095,14 +5095,13 @@ GameObject:
   - component: {fileID: 6500638202278548790}
   - component: {fileID: 6500638202283464942}
   - component: {fileID: -5095209183634095032}
-  - component: {fileID: 187267031276637119}
-  - component: {fileID: 1456612015507017026}
   - component: {fileID: 4009590494594011319}
   - component: {fileID: 317685482742448920}
   - component: {fileID: 7667351565696217468}
   - component: {fileID: 6456172990402835397}
   - component: {fileID: 4391396974307842087}
   - component: {fileID: 751669193349115690}
+  - component: {fileID: 1045160910228426539}
   m_Layer: 10
   m_Name: EVA 01 Prefab
   m_TagString: Untagged
@@ -5168,45 +5167,6 @@ MonoBehaviour:
   isWandering: 0
   WhichIAMovement: 1
   _spawnPosition: {fileID: 0}
---- !u!114 &187267031276637119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6500638202278313572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14058ab18725cfe4a88bcf3b84d2851f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EVAControl: 1
-  EVAAnimator: {fileID: 2543807863624463704}
-  _navMeshAgent: {fileID: 4009590494594011319}
-  patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
---- !u!114 &1456612015507017026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6500638202278313572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6be643cd898bbc448ce208f76c6cc77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EVAControl: 1
-  EVAAnimator: {fileID: 2543807863624463704}
-  _navMeshAgent: {fileID: 4009590494594011319}
-  maxWanderTimer: 7
-  wanderRange: 15
 --- !u!195 &4009590494594011319
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5366,6 +5326,28 @@ MonoBehaviour:
     quaternionParams: []
     quaternionParamsNames: []
     quaternionParamsLostDefaultValue: 
+--- !u!114 &1045160910228426539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500638202278313572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76458989aa709e944a912d513ed4bf8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EVAControl: 1
+  _navMeshAgent: {fileID: 4009590494594011319}
+  patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  walkRadius: 30000
 --- !u!1 &6500638202278360514
 GameObject:
   m_ObjectHideFlags: 0

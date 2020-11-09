@@ -85,8 +85,6 @@ namespace Complete
             // Once the tanks have been created and the camera is using them as targets, start the game.
             m_EVAS[0].m_EVAInfo.WhichIAMovement = WhichIAAngel;
             m_EVAS[WhichEVA].m_EVAInfo.WhichIAMovement = WhichIAEVA;
-            m_EVAS[0].EVASetIAMovement();
-            m_EVAS[WhichEVA].EVASetIAMovement();
 
             PutBoolsIA();
             RoundWinnerImageFunction(m_WhoWinsRound, false);

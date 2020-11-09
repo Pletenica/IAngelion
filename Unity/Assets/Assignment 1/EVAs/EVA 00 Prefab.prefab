@@ -5417,13 +5417,12 @@ GameObject:
   - component: {fileID: 6500638202282202350}
   - component: {fileID: 6500638202282209378}
   - component: {fileID: 4315371302674935605}
+  - component: {fileID: 6407884349855366216}
   - component: {fileID: 6778691768688365407}
   - component: {fileID: 6318267608695385200}
   - component: {fileID: 8395718582409724460}
   - component: {fileID: 6405386010224063313}
   - component: {fileID: 4092569476224177182}
-  - component: {fileID: 3471565706088864113}
-  - component: {fileID: 65603073515793496}
   - component: {fileID: 4574169545316397482}
   m_Layer: 10
   m_Name: EVA 00 Prefab
@@ -5681,6 +5680,27 @@ MonoBehaviour:
   isWandering: 0
   WhichIAMovement: 1
   _spawnPosition: {fileID: 0}
+--- !u!114 &6407884349855366216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500638202278313572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76458989aa709e944a912d513ed4bf8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EVAControl: 1
+  _navMeshAgent: {fileID: 4092569476224177182}
+  patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &6778691768688365407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5770,45 +5790,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &3471565706088864113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6500638202278313572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14058ab18725cfe4a88bcf3b84d2851f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EVAControl: 1
-  EVAAnimator: {fileID: 5848042579948389887}
-  _navMeshAgent: {fileID: 4092569476224177182}
-  patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
---- !u!114 &65603073515793496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6500638202278313572}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6be643cd898bbc448ce208f76c6cc77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EVAControl: 1
-  EVAAnimator: {fileID: 5848042579948389887}
-  _navMeshAgent: {fileID: 4092569476224177182}
-  maxWanderTimer: 7
-  wanderRange: 15
 --- !u!114 &4574169545316397482
 MonoBehaviour:
   m_ObjectHideFlags: 0
